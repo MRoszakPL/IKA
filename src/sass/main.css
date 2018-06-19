@@ -16,8 +16,15 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start; }
+    footer .col-md ul {
+      flex-direction: column;
+      margin: 0;
+      padding: 0; }
+      footer .col-md ul li a {
+        color: gray;
+        font-size: 1rem; }
     footer .col-md h3 {
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1rem;
@@ -25,10 +32,12 @@ footer {
     footer .col-md .number {
       margin-bottom: 0.5rem;
       font-size: 1.5rem;
-      color: cornflowerblue; }
+      color: cornflowerblue;
+      align-self: center; }
     footer .col-md .brand {
       margin-bottom: 1rem;
-      margin-top: 1rem; }
+      margin-top: 1rem;
+      align-self: center; }
 
 nav {
   background-color: #37a6df; }
@@ -57,6 +66,7 @@ nav {
 .jumbotron {
   border-bottom: 2px solid cornflowerblue;
   height: 40rem;
+  width: 100%;
   background-image: url("../images/cleaning.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -88,23 +98,71 @@ nav {
 .galleryElement {
   display: flex;
   min-height: 20rem;
-  flex-direction: column;
   justify-content: center;
   align-items: center; }
-
-.galleryElement p {
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-top: 1rem;
-  color: cornflowerblue; }
+  .galleryElement a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .galleryElement p {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: cornflowerblue;
+    text-align: center; }
 
 .mainContent {
+  min-height: 100rem;
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  align-items: center; }
 
-.hidden {
-  display: none; }
+.blog {
+  border-top: 2px solid #ed5b31;
+  max-width: 75rem;
+  min-height: 30rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row; }
+  .blog h2 {
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: cornflowerblue;
+    width: 100%; }
+  .blog a {
+    color: black;
+    min-height: 20rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  .blog .col-md {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #FCF9EE;
+    box-shadow: 2px 2px 9px #C4BCC4;
+    border-radius: 1rem; }
+    .blog .col-md p {
+      padding-left: 1rem;
+      margin-bottom: 0.5rem; }
+    .blog .col-md .theme {
+      align-self: flex-start;
+      color: #37a6df;
+      padding-top: 1rem;
+      font-size: 2rem; }
+    .blog .col-md .date {
+      align-self: flex-start;
+      font-size: 0.8rem; }
+    .blog .col-md .message {
+      height: 70%;
+      align-self: flex-end; }
 
 button {
   background-color: inherit;

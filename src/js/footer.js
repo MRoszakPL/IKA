@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-
+import {
+    NavLink
+} from 'react-router-dom';
 
 class MyAccount extends Component{
 
@@ -8,7 +10,48 @@ class MyAccount extends Component{
         return (
             <div className={'col-md'}>
                 <h3>Moje konto</h3>
+                <ul>
+                    <li><NavLink to={'login'}>Zaloguj</NavLink></li>
+                    <li><NavLink to={'signUp'}>Zarejestruj się</NavLink></li>
+                    <li><NavLink to={'passwordRecovery'}>Przypomnienie hasła</NavLink></li>
+                    <li><NavLink to={'tos'}>Regulamin</NavLink></li>
+                    <li><NavLink to={'foms'}>Formularze</NavLink></li>
+                </ul>
+            </div>
+        );
+    }
 
+}
+
+
+class Others extends Component{
+
+    render() {
+        return (
+            <div className={'col-md'}>
+                <h3>O firmie</h3>
+                <ul>
+                    <li><NavLink to={'about'}>Firma</NavLink></li>
+                    <li><NavLink to={'ecology'}>Ekologia</NavLink></li>
+                    <li><NavLink to={'quality'}>Jakość</NavLink></li>
+                    <li><NavLink to={'carrier'}>Kariera</NavLink></li>
+                    <li><NavLink to={'handelPartners'}>Partnerzy handlowi</NavLink></li>
+                </ul>
+            </div>
+        );
+    }
+
+}
+
+
+class MainBrands extends Component{
+
+    render() {
+        return (
+            <div className={'col-md'}>
+                <h3>Marki własne</h3>
+                <img className={'brand'} src={'./images/masterFooter.png'}/>
+                <img className={'brand'} src={'./images/moranaFooter.png'}/>
             </div>
         );
     }
@@ -31,37 +74,13 @@ class Contact extends Component{
     }
 }
 
-
-class MainBrands extends Component{
-
-    render() {
-        return (
-            <div className={'col-md'}>
-                <h3>Marki własne</h3>
-                <img className={'brand'} src={'./images/masterFooter.png'}/>
-                <img className={'brand'} src={'./images/moranaFooter.png'}/>
-            </div>
-        );
-    }
-
-}
-
 class Footer extends Component {
 
     render() {
         return (
             <div className={'container row'}>
-
-               <MyAccount/>
-
-                <div className={'col-md'}>
-                    <h3>Obsługa</h3>
-                </div>
-
-                <div className={'col-md'}>
-                    <h3>Inne</h3>
-                </div>
-
+                <MyAccount/>
+                <Others/>
                 <MainBrands/>
                 <Contact/>
             </div>

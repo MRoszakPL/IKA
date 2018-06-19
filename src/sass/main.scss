@@ -31,6 +31,7 @@ nav {
 .jumbotron{
   border-bottom: 2px solid cornflowerblue;
   height: 40rem;
+  width: 100%;
   background-image: url("../images/cleaning.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -68,27 +69,92 @@ nav {
 .galleryElement{
   display: flex;
   min-height: 20rem;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  p{
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: cornflowerblue;
+    text-align: center;
+  }
+
 }
 
-.galleryElement p{
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-top: 1rem;
-  color: cornflowerblue;
-}
 
 .mainContent{
+  min-height: 100rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
-
+  align-items: center;
 }
 
-.hidden{
-  display: none;
+
+.blog{
+  border-top: 2px solid #ed5b31;
+  max-width: 75rem;
+  min-height: 30rem;
+  display: flex;
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  h2{
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: cornflowerblue;
+    width: 100%;
+  }
+  a{
+    color: black;
+    min-height: 20rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom:  1rem;
+  }
+  .col-md{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    p{
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+
+    }
+    .theme{
+      align-self: flex-start;
+      color: #37a6df;
+      padding-top: 1rem;
+      font-size: 2rem;
+    }
+    .date{
+      align-self: flex-start;
+      font-size: 0.8rem;
+    }
+    .message{
+        height: 70%;
+        align-self: flex-end;
+    }
+
+
+    background-color: #FCF9EE;
+    box-shadow: 2px 2px 9px #C4BCC4;
+    border-radius: 1rem;
+  }
 }
 
 button{
