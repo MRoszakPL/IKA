@@ -1,0 +1,111 @@
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  footer .row {
+    background-image: url("../images/mb_lineup.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-wrap: wrap; }
+  footer .col-md {
+    padding-top: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; }
+    footer .col-md h3 {
+      padding-bottom: 2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1rem;
+      color: cornflowerblue; }
+    footer .col-md .number {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      color: cornflowerblue; }
+    footer .col-md .brand {
+      margin-bottom: 1rem;
+      margin-top: 1rem; }
+
+nav {
+  background-color: #37a6df; }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  margin-right: 1rem; }
+
+.container {
+  max-width: 75rem;
+  display: flex;
+  justify-content: space-between; }
+
+.gallery {
+  max-width: 75rem;
+  min-height: 25rem;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  align-content: stretch; }
+
+.container ul {
+  display: flex;
+  list-style: none; }
+
+.jumbotron {
+  border-bottom: 2px solid cornflowerblue;
+  height: 40rem;
+  background-image: url("../images/cleaning.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.row {
+  width: 100%;
+  min-height: 20rem; }
+
+.homeButton {
+  height: 1rem;
+  width: 1rem;
+  background-image: url("../images/home.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.gallery {
+  display: flex;
+  min-height: 20rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center; }
+
+.galleryElement {
+  display: flex;
+  min-height: 20rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.galleryElement p {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: cornflowerblue; }
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.hidden {
+  display: none; }
+
+button {
+  background-color: inherit;
+  border: none; }

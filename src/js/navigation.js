@@ -8,7 +8,7 @@ class NavBar extends Component{
 
     render() {
         return (
-            <nav className="navbar navbar-expand-sm navbar-light">
+            <nav className="navbar navbar-expand navbar-light sticky-top">
                 <div className='container'>
                     <NavLink className="nav-link" to="/"><div className={'homeButton'}></div></NavLink>
                     <ul className="navbar-nav ">

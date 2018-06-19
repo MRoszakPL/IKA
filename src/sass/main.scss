@@ -1,4 +1,4 @@
-
+@import './_footer.scss';
 
 nav {
   background-color: #37a6df;
@@ -9,9 +9,18 @@ nav {
   margin-right: 1rem;
 }
 .container{
-  width: 75rem;
+  max-width: 75rem;
   display: flex;
   justify-content: space-between;
+}
+
+.gallery{
+  max-width: 75rem;
+  min-height: 25rem;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  align-content: stretch;
 }
 
 .container ul {
@@ -20,8 +29,9 @@ nav {
 }
 
 .jumbotron{
+  border-bottom: 2px solid cornflowerblue;
   height: 40rem;
-  background-image: url("./images/cleaning.jpg");
+  background-image: url("../images/cleaning.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -31,33 +41,39 @@ nav {
   flex-direction: column;
 }
 
+.row{
+  width: 100%;
+  min-height: 20rem;
+}
 
 .homeButton{
   height: 1rem;
   width: 1rem;
-  background-image: url("./images/home.png");
+  background-image: url("../images/home.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
-.slider {
+.gallery {
+
   display: flex;
-  height: 20rem;
+  min-height: 20rem;
   width: 100%;
   justify-content: center;
   align-items: center;
+
 }
 
-.sliderElement{
+.galleryElement{
   display: flex;
-  flex: 1;
+  min-height: 20rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.sliderElement p{
+.galleryElement p{
   text-transform: uppercase;
   font-weight: 700;
   margin-top: 1rem;
@@ -68,6 +84,7 @@ nav {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
 }
 
 .hidden{
@@ -79,9 +96,3 @@ button{
   border: none;
 }
 
-footer{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

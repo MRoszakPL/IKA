@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 
-import './App.css';
+import './sass/main.css'
 
 import NavBar from './js/navigation';
 import Main from './js/main';
