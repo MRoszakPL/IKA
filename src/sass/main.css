@@ -43,12 +43,15 @@ footer {
   padding-top: 2rem;
   flex-direction: column;
   align-self: center;
+  align-items: center;
   justify-content: center; }
   .contact .row {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    align-items: flex-start; }
+    align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0; }
   .contact .container {
     display: flex;
     flex-wrap: wrap;
@@ -60,6 +63,8 @@ footer {
       margin-bottom: 1rem; }
   .contact .col-4, .contact .col-8 {
     min-width: 200px; }
+  .contact .col-12 {
+    padding-right: 0; }
   .contact h3 {
     padding-bottom: 1rem;
     text-transform: uppercase;
@@ -109,13 +114,26 @@ footer {
     flex-wrap: wrap;
     justify-content: center; }
 
+.loginForm .col-12 {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.loginForm form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 25rem; }
+
 .main {
   display: flex;
   justify-content: center;
   align-content: center; }
 
 nav {
-  background-color: #37a6df; }
+  background-color: #37a6df;
+  font-size: 1rem; }
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
@@ -123,7 +141,7 @@ nav {
   margin-right: 1rem; }
 
 .navbar-light .navbar-nav .nav-link.active {
-  color: #ed5b31; }
+  color: #9c2562; }
 
 .container {
   max-width: 75rem;
@@ -184,6 +202,8 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    .galleryElement a:hover {
+      text-decoration: #007bff underline; }
   .galleryElement p {
     text-transform: uppercase;
     font-weight: 700;
@@ -212,6 +232,9 @@ nav {
     padding-bottom: 1rem;
     color: cornflowerblue;
     width: 100%; }
+    .blog h2 span {
+      color: #ed5b31;
+      font-size: 1.5rem; }
   .blog a {
     color: black;
     min-height: 20rem;
@@ -219,6 +242,8 @@ nav {
     margin-left: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem; }
+    .blog a:hover {
+      text-decoration: #007bff underline; }
   .blog .col-md {
     height: 100%;
     display: flex;

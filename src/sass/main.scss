@@ -1,5 +1,6 @@
 @import './_footer.scss';
 @import './_contact.scss';
+@import './_login.scss';
 
 .main {
   display: flex;
@@ -8,6 +9,7 @@
 }
 nav {
   background-color: #37a6df;
+  font-size: 1rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -17,7 +19,7 @@ nav {
 }
 
 .navbar-light .navbar-nav .nav-link.active{
-  color: #ed5b31;
+  color: #9c2562;
 }
 .container{
   max-width: 75rem;
@@ -88,6 +90,9 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    &:hover{
+      text-decoration: #007bff underline;
+    }
   }
   p{
     text-transform: uppercase;
@@ -125,6 +130,10 @@ nav {
     padding-bottom: 1rem;
     color: cornflowerblue;
     width: 100%;
+    span{
+      color: #ed5b31;
+      font-size: 1.5rem;
+    }
   }
   a{
     color: black;
@@ -133,6 +142,9 @@ nav {
     margin-left: 1rem;
     margin-top: 1rem;
     margin-bottom:  1rem;
+    &:hover{
+      text-decoration: #007bff underline;
+    }
   }
   .col-md{
     height: 100%;

@@ -5,35 +5,40 @@ const { withScriptjs, withGoogleMap, GoogleMap,Marker} = require("react-google-m
 const listOfContacts = [
     {
         name: 'Centrala Poznań',
-        adress: '61-362 Poznań, ul. Forteczna 19',
+        city: '61-362 Poznań',
+        street: 'ul. Forteczna 19',
         main: '61 653 10 80',
         fax: '61 653 09 65',
         kom: '601 901 000',
         email: 'zieniuk@ika.pl'},
     {
         name: 'Oddział Szczecin',
-        adress: '72-002 Dołuje k. Szczecina, ul. Słoneczny Sad 29B',
+        city: '72-002 Dołuje k. Szczecina',
+        street: 'ul. Słoneczny Sad 29B',
         main: '91 462 37 44',
         fax: '91 462 37 33',
         kom: '601 901 044',
         email: 'tomaszmatkowski@ika.pl'},
     {
         name: 'Oddział Kraków',
-        adress: '30-740 Kraków, ul. Półłanki 29 G',
+        city: '30-740 Kraków',
+        street: 'ul. Półłanki 29 G',
         main: '12 296 23 40',
         fax: '12 264 37 59',
         kom: '601 901 020',
         email: 'skowron@ika.pl'},
     {
         name: 'Oddział Złotów',
-        adress: '77-400 Złotów, ul. Sosnowa 8',
+        city: '77-400 Złotów',
+        street: 'ul. Sosnowa 8',
         main: '67 349 21 14',
         fax: '67 349 21 15',
         kom: '601 901 080',
         email: 'zieniuk@ika.pl'},
     {
-        name: 'Oddział Żagań:',
-        adress: '68-100 Żagań, ul. Bema 17',
+        name: 'Oddział Żagań',
+        city: '68-100 Żagań',
+        street: 'ul. Bema 17',
         main: '68 477 68 20',
         fax: '68 477 45 15',
         kom: '601 901 050',
@@ -55,15 +60,16 @@ const MapWithAMarker = compose(withScriptjs, withGoogleMap)(props =>
 class ListElement extends Component{
 
     render() {
-        const {name, adress, main, fax, kom, email} = this.props.data;
+        const {name, city, street, main, fax, kom, email} = this.props.data;
         return (
             <li className={'col-4'}>
                 <h4>{name}</h4>
-                <p>{adress}</p>
-                <p>{main}</p>
-                <p>{fax}</p>
-                <p>{kom}</p>
-                <p>{email}</p>
+                <p>Adres: {city}</p>
+                <p>{street}</p>
+                <p>tel: {main}</p>
+                <p>tel/fax :{fax}</p>
+                <p>kom: {kom}</p>
+                <p>e-mail: {email}</p>
             </li>
         );
     }

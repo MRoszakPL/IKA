@@ -69,7 +69,7 @@ class Info extends Component{
     render() {
         return (
             <div className={'blog row'}>
-                <h2>Aktualności</h2>
+                <h2>Aktualności... <span>co u nas słychać</span></h2>
 
                     <NavLink to={'/blog/:id'}>
                             <div className={'col-md'}>

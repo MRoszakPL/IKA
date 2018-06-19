@@ -2,12 +2,15 @@
   padding-top: 2rem;
   flex-direction: column;
   align-self: center;
+  align-items: center;
   justify-content: center;
   .row{
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1rem;
     align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0;
   }
   .container{
     display: flex;
@@ -21,10 +24,13 @@
       margin-bottom: 1rem;
     }
   }
-.col-4, .col-8{
-  min-width: 200px;
+  .col-4, .col-8{
+    min-width: 200px;
+  }
 
-}
+  .col-12{
+    padding-right: 0;
+  }
   h3{
     padding-bottom: 1rem;
     text-transform: uppercase;

@@ -65,7 +65,7 @@ class Contact extends Component{
             <div className={'col-md'}>
                 <h3>Kontakt</h3>
                 <p className={'number'}>61 653 10 80</p>
-                <p className={'number'}>biuro@ika.pl</p>
+                <p className={'number'}>info@ika.pl</p>
                 <p>Dział obslugi klienta czynny
                     od poniedziałku do piątku
                     w godzinach 8:00 do 16:00</p>

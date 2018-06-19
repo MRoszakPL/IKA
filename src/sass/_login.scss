@@ -1,0 +1,16 @@
+.loginForm{
+
+  .col-12{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 25rem;
+  }
+
+}
