@@ -4,6 +4,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+
   .row{
     background-image: url("../images/mb_lineup.png") ;
     background-repeat: no-repeat;
@@ -11,6 +12,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
   }
+
   .col-md{
     padding-top: 2rem;
     flex-grow: 1;
@@ -18,23 +20,26 @@ footer{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+
     ul{
       flex-direction: column;
+      align-items: flex-start;
       margin: 0;
       padding: 0;
       li a{
         color: gray;
         font-size: 1rem;
       }
-
     }
+
     h3{
-      padding-bottom: 1rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1rem;
       color: cornflowerblue;
-
+      width: 10rem;
+      border-bottom: 2px solid #37a6df;
     }
     .number{
       margin-bottom: 0.5rem;
@@ -42,11 +47,11 @@ footer{
       color: cornflowerblue;
       align-self: center;
     }
+
     .brand{
       margin-bottom: 1rem;
       margin-top: 1rem;
       align-self: center;
     }
   }
-
 }

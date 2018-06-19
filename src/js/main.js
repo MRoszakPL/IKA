@@ -56,8 +56,8 @@ class ImageJumbotron extends Component{
     render() {
         return (
             <div className={'jumbotron'}>
-                <h2 style={{fontSize: '6rem', fontWeight: '700', letterSpacing: '0.5rem'}}><span style={{color: '#9c2562'}}>I</span><span style={{color: '#ef5a2e'}}>K</span><span style={{color: '#2fa8e0'}}>A</span></h2>
-                <h2 style={{color: 'white', fontSize: '3rem', borderTop: '10px solid white'}}>POLSKA</h2>
+                <h2 style={{fontSize: '20rem', fontWeight: '700', letterSpacing: '0.5rem'}}><span style={{color: '#9c2562'}}>I</span><span style={{color: '#ef5a2e'}}>K</span><span style={{color: '#2fa8e0'}}>A</span></h2>
+                <h2 style={{color: 'white', fontSize: '9rem', borderTop: '10px solid white'}}>POLSKA</h2>
                 <h2 style={{color: 'white', fontSize: '3rem', fontWeight: '700', textAlign: 'center'}}>Twoj partner w biznesie</h2>
             </div>
         );
@@ -71,7 +71,7 @@ class Info extends Component{
             <div className={'blog row'}>
                 <h2>Aktualności... <span>co u nas słychać</span></h2>
 
-                    <NavLink to={'/blog/:id'}>
+                    <NavLink to={'/blog/1'}>
                             <div className={'col-md'}>
                             <p className={'theme'}>Temat</p>
                             <p className={'date'}>dodano 15.11.2018</p>
@@ -83,7 +83,7 @@ class Info extends Component{
                     </NavLink>
 
 
-                    <NavLink to={'/blog/:id'}>
+                    <NavLink to={'/blog/2'}>
                         <div className={'col-md'}>
                             <p className={'theme'}>Temat</p>
                             <p className={'date'}>dodano 15.11.2018</p>
@@ -99,6 +99,7 @@ class Info extends Component{
     }
 
 }
+
 class Main extends Component{
 
     render() {

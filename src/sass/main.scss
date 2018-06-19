@@ -1,26 +1,19 @@
 @import './_footer.scss';
 @import './_contact.scss';
 @import './_login.scss';
+@import './_navbar.scss';
+
+body{
+  background-color: #FAF5D6;
+}
 
 .main {
   display: flex;
   justify-content: center;
   align-content: center;
-}
-nav {
-  background-color: #37a6df;
-  font-size: 1rem;
+
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-  font-weight: bold;
-  margin-right: 1rem;
-}
-
-.navbar-light .navbar-nav .nav-link.active{
-  color: #9c2562;
-}
 .container{
   max-width: 75rem;
   display: flex;
@@ -35,6 +28,15 @@ nav {
   justify-content: space-between;
   align-content: stretch;
 }
+a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    text-decoration: #007bff underline;
+  }
+}
 
 .container ul {
   display: flex;
@@ -43,7 +45,7 @@ nav {
 
 .jumbotron{
   border-bottom: 2px solid cornflowerblue;
-  height: 40rem;
+  height: 50rem;
   width: 100%;
   background-image: url("../images/cleaning.jpg");
   background-size: cover;
@@ -81,19 +83,16 @@ nav {
 
 .galleryElement{
   display: flex;
-  min-height: 20rem;
+  min-height: 10rem;
   justify-content: center;
   align-items: center;
-
-  a{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &:hover{
-      text-decoration: #007bff underline;
-    }
-  }
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  padding: 0 0;
+  box-shadow: 2px 2px 9px #C4BCC4;
   p{
     text-transform: uppercase;
     font-weight: 700;

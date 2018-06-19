@@ -84,7 +84,7 @@ class List extends Component{
             return <ListElement key={index} data={element}/>
         })
         return (
-            <ul style={{ marginTop: '4rem'}}>
+            <ul>
                 {list}
             </ul>
         );
@@ -126,7 +126,7 @@ class Form extends Component{
                             <MapWithAMarker
                                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
                                 loadingElement={<div style={{ height: `100%` }} />}
-                                containerElement={<div style={{ height: `400px` }} />}
+                                containerElement={<div style={{ height: `30rem` }} />}
                                 mapElement={<div style={{ height: `30rem` }} />}
                             />
 

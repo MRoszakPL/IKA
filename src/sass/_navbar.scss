@@ -1,0 +1,25 @@
+nav {
+  background-color: #37a6df;
+  font-size: 1.5rem;
+  opacity: 0.8;
+
+  &.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+
+  &.navbar-light .navbar-nav .nav-link.active {
+    color: #C4BCC4;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      text-decoration: #007bff underline;
+    }
+  }
+}
