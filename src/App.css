@@ -1,0 +1,87 @@
+
+
+nav {
+  background-color: #37a6df;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  margin-right: 1rem;
+}
+.container{
+  width: 75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container ul {
+  display: flex;
+  list-style: none;
+}
+
+.jumbotron{
+  height: 40rem;
+  background-image: url("./images/cleaning.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.homeButton{
+  height: 1rem;
+  width: 1rem;
+  background-image: url("./images/home.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.slider {
+  display: flex;
+  height: 20rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderElement{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderElement p{
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: cornflowerblue;
+}
+
+.mainContent{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hidden{
+  display: none;
+}
+
+button{
+  background-color: inherit;
+  border: none;
+}
+
+footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
