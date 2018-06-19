@@ -1,12 +1,23 @@
 @import './_footer.scss';
+@import './_contact.scss';
 
+.main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 nav {
   background-color: #37a6df;
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
+  font-weight: bold;
   margin-right: 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link.active{
+  color: #ed5b31;
 }
 .container{
   max-width: 75rem;

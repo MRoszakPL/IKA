@@ -39,12 +39,79 @@ footer {
       margin-top: 1rem;
       align-self: center; }
 
+.contact {
+  padding-top: 2rem;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: flex-start; }
+  .contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    min-height: 40rem; }
+  .contact .col-4, .contact .col-8 {
+    height: 100%;
+    align-content: center;
+    justify-content: center; }
+  .contact h3 {
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    color: cornflowerblue; }
+  .contact h4 {
+    margin-top: 3rem;
+    margin-bottom: 1rem; }
+  .contact .number {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: cornflowerblue;
+    align-self: center; }
+  .contact .brand {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    align-self: center; }
+  .contact input, .contact textarea {
+    margin-top: 1rem;
+    width: 80%;
+    border: 2px solid #37a6df;
+    border-radius: 0.5rem;
+    padding-left: 1rem; }
+    .contact input:focus, .contact textarea:focus {
+      outline: none; }
+  .contact button {
+    margin-top: 1rem;
+    width: 50%;
+    height: 4rem;
+    background-color: #37a6df;
+    color: white;
+    border-radius: 1rem; }
+  .contact input {
+    height: 4rem; }
+  .contact textarea {
+    resize: none;
+    height: 10rem; }
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-content: center; }
+
 nav {
   background-color: #37a6df; }
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
+  font-weight: bold;
   margin-right: 1rem; }
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #ed5b31; }
 
 .container {
   max-width: 75rem;

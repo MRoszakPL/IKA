@@ -50,8 +50,8 @@ class MainBrands extends Component{
         return (
             <div className={'col-md'}>
                 <h3>Marki własne</h3>
-                <img className={'brand'} src={'./images/masterFooter.png'}/>
-                <img className={'brand'} src={'./images/moranaFooter.png'}/>
+                <img className={'brand'} src={'./images/masterFooter.png'} alt={'Marka master'}/>
+                <img className={'brand'} src={'./images/moranaFooter.png'} alt={'Marka Morana'}/>
             </div>
         );
     }
@@ -78,12 +78,14 @@ class Footer extends Component {
 
     render() {
         return (
-            <div className={'container row'}>
-                <MyAccount/>
-                <Others/>
-                <MainBrands/>
-                <Contact/>
-            </div>
+            <footer>
+                <div className={'container row'}>
+                    <MyAccount/>
+                    <Others/>
+                    <MainBrands/>
+                    <Contact/>
+                </div>
+            </footer>
         );
     }
 

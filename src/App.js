@@ -20,9 +20,9 @@ import Footer from "./js/footer";
 class App extends Component {
   render() {
     return (
-      <div>
+
         <HashRouter>
-            <div>
+            <main>
                 <NavBar/>
                 <Switch>
                     <Route exact path='/' component={Main}/>
@@ -32,12 +32,10 @@ class App extends Component {
                     <Route path='/login' component={LogIn}/>
                     <Route component={NoMatch}/>
                 </Switch>
-                <footer>
-                    <Footer/>
-                </footer>
-            </div>
+                <Footer/>
+            </main>
         </HashRouter>
-      </div>
+
     );
   }
 }
