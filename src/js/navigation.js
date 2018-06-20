@@ -27,7 +27,9 @@ class NavBar extends Component{
     unsign = (e) =>{
         e.preventDefault();
 
+        this.sendData('logged', 0);
         this.sendData('login', 0);
+        this.sendData('password', 0);
         this.setState({
             navigate: true
         })
@@ -52,7 +54,7 @@ class NavBar extends Component{
                             <NavLink className="nav-link" to="/myaccount">Moje konto</NavLink>
                         </li> : ''}
                         <li className="nav-item">
-                            {this.downloadData('login') ? <NavLink className="nav-link" to="/unsing" onClick={this.unsign}>Wyloguj konto</NavLink>  : <NavLink className="nav-link" to="/login">Zaloguj się</NavLink>}
+                            {this.downloadData('logged') ? <NavLink className="nav-link" to="/unsing" onClick={this.unsign}>Wyloguj konto</NavLink>  : <NavLink className="nav-link" to="/login">Zaloguj się</NavLink>}
                         </li>
                         {this.state.navigate && <Redirect to="/" push={true} /> }
                     </ul>

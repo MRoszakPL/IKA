@@ -4,7 +4,10 @@
       "id": 1,
       "login": "Maciej",
       "password": "dadada",
-      "level": 1
+      "level": 1,
+      "name": "Maciej",
+      "surename": "Roszak",
+        "email" : "roszak.maciej.msg@gmai.com"
     },
     {
       "id": 2,

@@ -14,8 +14,10 @@ import Blog from './js/blogPage';
 import Shop from './js/shop';
 import Contact from './js/contact';
 import LogIn from './js/login';
+import Basket from "./js/basket";
 import NoMatch from './js/nomatch';
 import Footer from "./js/footer";
+import MyAccount from "./js/myAccount";
 
 class App extends Component {
   render() {
@@ -30,6 +32,8 @@ class App extends Component {
                     <Route path='/shop' component={Shop}/>
                     <Route path='/contact' component={Contact}/>
                     <Route path='/login' component={LogIn}/>
+                    <Route path='/basket' component={Basket}/>
+                    <Route path='/myAccount' component={MyAccount}/>
                     <Route component={NoMatch}/>
                 </Switch>
                 <Footer/>

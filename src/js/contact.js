@@ -109,7 +109,7 @@ class Form extends Component{
                     </div>
                     <div className={'col-4 '}>
                         <h2>Kontakt</h2>
-                        <h4>Główny numer</h4>
+                        <h4>Główny kontakt</h4>
                         <p className={'number'}>61 653 10 80</p>
                         <p className={'number'}>info@ika.pl</p>
                         <p>Dział obslugi klienta czynny

@@ -12,6 +12,15 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+  h2{
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: #37a6df;
+    border-bottom: 2px solid cornflowerblue;
+
+  }
+
   .container{
     display: flex;
     flex-wrap: wrap;
@@ -20,9 +29,7 @@
   }
   .map{
     align-items: flex-start;
-    h2{
-      margin-bottom: 1rem;
-    }
+
   }
 
   .col-3, .col-8{

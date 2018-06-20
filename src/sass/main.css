@@ -55,6 +55,11 @@ footer {
     align-items: flex-start;
     margin-left: 0;
     margin-right: 0; }
+  .contact h2 {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: #37a6df;
+    border-bottom: 2px solid cornflowerblue; }
   .contact .container {
     display: flex;
     flex-wrap: wrap;
@@ -62,8 +67,6 @@ footer {
     align-items: flex-start; }
   .contact .map {
     align-items: flex-start; }
-    .contact .map h2 {
-      margin-bottom: 1rem; }
   .contact .col-3, .contact .col-8 {
     min-width: 300px; }
   .contact .col-12 {
@@ -340,6 +343,41 @@ nav {
       display: block; }
     .shopPage .shopmenu .dropdown:hover .dropbtn {
       background-color: #ed5b31; }
+
+.myAccount.row {
+  margin: 0 0;
+  align-self: center;
+  justify-self: center; }
+
+.myAccount .col-md {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.myAccount ul {
+  min-height: 50%;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column; }
+  .myAccount ul li {
+    margin-top: 1rem; }
+
+.myAccount button {
+  background-color: #ed5b31;
+  min-width: 80%;
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem; }
+  .myAccount button:first-of-type {
+    background-color: #37a6df; }
+
+.myAccount h2 {
+  margin-top: 2rem; }
 
 body {
   background-color: #FCFAE8; }
