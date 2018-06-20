@@ -1,35 +1,123 @@
-.searchbar{
-  min-height: 10rem ;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-  border-radius: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  .col-6{
-    input{
-      width: 80%;
-    }
-  }
+.shopPage{
 
-}
+  width: 100%;
 
-.shopmenu{
-  background: rgba(203,96,179,1);
-
-  min-height: 5rem;
-  a{
-    color: white;
-    &:hover{
-      text-decoration: white underline;
-    }
-  }
-  ul{
-    width: 100%;
-    margin: 0 0;
+  .searchbar{
+    min-height: 10rem ;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    .col-6{
+      border: 1px coral solid;
+      border-radius: 2rem;
+      input{
+        width: 80%;
+        border: none;
+        height: 4rem;
+        padding-left: 1rem;
+        border-radius: 2rem;
+        &:focus{
+          outline: none;
+        }
+      }
+      button{
+        box-sizing: border-box;
+        transform: translateX(1rem);
+        border-radius: 2rem;
+        height: 4rem;
+        width: 20%;
+        color: white;
+        background-color: #37a6df;
+        &:focus{
+          outline: none;
+          border: 1px rgba(203,96,179,1) solid;
+        }
+      }
+    }
+
   }
+  .carousel-control-prev, .carousel-control-next{
+    background-color: #ed5b31;
+  }
+
+  .carousel{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    background: rgba(255,255,255,1);
+    background-image: linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 99%, rgba(237,237,237,1) 100%);;
+    min-height: 40rem;
+
+    .carousel-inner{
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-indicators li{
+      background-color: #ed5b31;
+      &.active{
+        background-color: rgba(203,96,179,1);
+      }
+    }
+
+   .carousel-item{
+      height: 100%;
+
+      a{
+        height: 100%;
+        >div{
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          h5{
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .carousel-caption{
+    color:  #37a6df;
+  }
+
+  h2{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color:  #ed5b31;
+    font-weight: bold;
+    z-index: 10;
+  }
+  .shopmenu{
+    background: rgba(203,96,179,1);
+
+    min-height: 5rem;
+    a{
+      color: white;
+      &:hover{
+        text-decoration: white underline;
+      }
+    }
+    ul{
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+      margin: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+
+
+
 }

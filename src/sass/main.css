@@ -193,43 +193,108 @@ nav {
     nav a:hover {
       text-decoration: #007bff underline; }
 
-.searchbar {
-  min-height: 10rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-  border-radius: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem; }
-  .searchbar .col-6 input {
-    width: 80%; }
-
-.shopmenu {
-  background: #cb60b3;
-  min-height: 5rem; }
-  .shopmenu a {
-    color: white; }
-    .shopmenu a:hover {
-      text-decoration: white underline; }
-  .shopmenu ul {
-    width: 100%;
-    margin: 0 0;
+.shopPage {
+  width: 100%; }
+  .shopPage .searchbar {
+    min-height: 10rem;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    background-color: white;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+    .shopPage .searchbar .col-6 {
+      border: 1px coral solid;
+      border-radius: 2rem; }
+      .shopPage .searchbar .col-6 input {
+        width: 80%;
+        border: none;
+        height: 4rem;
+        padding-left: 1rem;
+        border-radius: 2rem; }
+        .shopPage .searchbar .col-6 input:focus {
+          outline: none; }
+      .shopPage .searchbar .col-6 button {
+        box-sizing: border-box;
+        transform: translateX(1rem);
+        border-radius: 2rem;
+        height: 4rem;
+        width: 20%;
+        color: white;
+        background-color: #37a6df; }
+        .shopPage .searchbar .col-6 button:focus {
+          outline: none;
+          border: 1px #cb60b3 solid; }
+  .shopPage .carousel-control-prev, .shopPage .carousel-control-next {
+    background-color: #ed5b31; }
+  .shopPage .carousel {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    background: white;
+    background-image: linear-gradient(top, white 0%, #f6f6f6 99%, #ededed 100%);
+    min-height: 40rem; }
+    .shopPage .carousel .carousel-inner {
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .shopPage .carousel .carousel-indicators li {
+      background-color: #ed5b31; }
+      .shopPage .carousel .carousel-indicators li.active {
+        background-color: #cb60b3; }
+    .shopPage .carousel .carousel-item {
+      height: 100%; }
+      .shopPage .carousel .carousel-item a {
+        height: 100%; }
+        .shopPage .carousel .carousel-item a > div {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .shopPage .carousel .carousel-item a > div h5 {
+            margin-top: 1rem; }
+  .shopPage .carousel-caption {
+    color: #37a6df; }
+  .shopPage h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #ed5b31;
+    font-weight: bold;
+    z-index: 10; }
+  .shopPage .shopmenu {
+    background: #cb60b3;
+    min-height: 5rem; }
+    .shopPage .shopmenu a {
+      color: white; }
+      .shopPage .shopmenu a:hover {
+        text-decoration: white underline; }
+    .shopPage .shopmenu ul {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+      margin: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
 
 body {
   background-color: #FCFAE8; }
 
-.main {
+main {
   display: flex;
   justify-content: center;
-  align-content: center; }
+  align-content: center;
+  flex-direction: column;
+  width: 100%; }
 
 .container {
   max-width: 75rem;
   display: flex;
+  padding: 0 0;
   justify-content: space-between; }
 
 .gallery {

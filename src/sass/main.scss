@@ -3,20 +3,23 @@
 @import './_login.scss';
 @import './_navbar.scss';
 @import './_shop.scss';
+
 body{
   background-color: #FCFAE8;
 }
 
-.main {
+main {
   display: flex;
   justify-content: center;
   align-content: center;
-
+  flex-direction: column;
+  width: 100%;
 }
 
 .container{
   max-width: 75rem;
   display: flex;
+  padding: 0 0;
   justify-content: space-between;
 }
 
@@ -41,6 +44,7 @@ a {
 .container ul {
   display: flex;
   list-style: none;
+
 }
 
 .jumbotron{

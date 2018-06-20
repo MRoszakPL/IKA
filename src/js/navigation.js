@@ -22,7 +22,7 @@ class NavBar extends Component{
                             <NavLink className="nav-link" to="/contact">Kontakt</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/login">Zaloguj sie</NavLink>
+                            <NavLink className="nav-link" to="/login">Zaloguj się</NavLink>
                         </li>
                     </ul>
                 </div>
