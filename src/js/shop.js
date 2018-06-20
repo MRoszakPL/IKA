@@ -6,7 +6,7 @@ import {
 
 
 
-const newItems = [
+const newProducts = [
     {
         name: 'Rękawice nitrylowe Aloes',
         price: '3.30',
@@ -38,15 +38,17 @@ const newItems = [
         src: 'scierkiMorana.jpg'
     },
 ]
+let numberOfProducts = 10;
+let sum = 142.32;
 
 class Basket extends Component{
 
     render() {
         return (
-            <div className={'col-3'}>
-                <p>Cena</p>
-                <p>Liczba produktów</p>
-                <button>Do koszyka</button>
+            <div className={'col-md basket'}>
+                <p>Liczba produktów {this.props.numberOfProducts}</p>
+                <p>Koszt {this.props.sum}</p>
+                <button className={'basketButton'}>Do koszyka</button>
             </div>
         );
     }
@@ -57,13 +59,15 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div className={'container searchbar'}>
-                <img className={'col-3'} src={logo}/>
-                <div className={'col-6'}>
-                    <input placeholder={'Wyszukaj produkt'} type={'text'}/>
-                    <button>Szukaj</button>
+            <div className={'row'}>
+                <div className={'container searchbar'}>
+                    <img className={'col-md'} alt={'logo'} src={logo}/>
+                    <div className={'col-md search'}>
+                        <input placeholder={'Wyszukaj produkt'} type={'text'}/>
+                        <button>Szukaj</button>
+                    </div>
+                    <Basket numberOfProducts={this.props.numberOfProducts} sum={this.props.sum}/>
                 </div>
-                <Basket/>
             </div>
         );
     }
@@ -76,13 +80,13 @@ class ShopMenu extends Component{
         return (
             <div className={'container shopmenu'} >
                 <ul>
-                    <li><NavLink to={'/shop/master'}>Master</NavLink></li>
-                    <li><NavLink to={'/shop/morana'}>Morana</NavLink></li>
-                    <li><NavLink to={'/shop/leaflet'}>Reklamówki</NavLink></li>
-                    <li><NavLink to={'/shop/package'}>Opakowania</NavLink></li>
-                    <li><NavLink to={'/shop/gloves'}>Rękawice</NavLink></li>
-                    <li><NavLink to={'/shop/hygienicArticles'}>Artykuły higieniczne</NavLink></li>
-                    <li><NavLink to={'/shop/professionalCleaning'}>Profesjonalne sprzątanie</NavLink></li>
+                    <li className={'col-sm'}><NavLink to={'/shop/master'}>Master</NavLink></li>
+                    <li className={'col-sm'}><NavLink to={'/shop/morana'}>Morana</NavLink></li>
+                    <li className={'col-sm'}><NavLink to={'/shop/leaflet'}>Reklamówki</NavLink></li>
+                    <li className={'col-sm'}><NavLink to={'/shop/package'}>Opakowania</NavLink></li>
+                    <li className={'col-sm'}><NavLink to={'/shop/gloves'}>Rękawice</NavLink></li>
+                    <li className={'col-sm'}><NavLink to={'/shop/hygienicArticles'}>Artykuły higieniczne</NavLink></li>
+                    <li className={'col-sm'}><NavLink to={'/shop/professionalCleaning'}>Profesjonalne sprzątanie</NavLink></li>
                 </ul>
             </div>
         );
@@ -110,15 +114,15 @@ class ShopItem extends Component {
     }
 }
 
-class NewItems extends Component {
+class NewProducts extends Component {
 
     render() {
 
-        let list = this.props.newItems.map((element,index)=>{
+        let list = this.props.items.map((element,index)=>{
             if(index === 0){
-                return <NewItem key={index} hide = {' active'} index={index} item={element}/>
+                return <NewProduct key={index} hide = {' active'} index={index} item={element}/>
             } else {
-                return <NewItem key={index} hide = {''} index={index} item={element}/>
+                return <NewProduct key={index} hide = {''} index={index} item={element}/>
             }
 
         });
@@ -155,23 +159,19 @@ class NewItems extends Component {
 
 }
 
-class NewItem extends Component{
+class NewProduct extends Component{
 
     render() {
         return (
-
-                <div className={'carousel-item'+ this.props.hide}>
-                    <NavLink to={'/shop/'+this.props.index}>
+            <div className={'carousel-item'+ this.props.hide}>
+                <NavLink to={'/shop/'+this.props.index}>
                     <div>
-                        <img src={'./images/'+this.props.item.src} />
-
-                            <h5>Cena {this.props.item.price}</h5>
-                            <p>{this.props.item.name}</p>
-
+                        <img src={'./images/'+this.props.item.src} alt={this.props.item.name}/>
+                        <h5> {this.props.item.name}</h5>
+                        <p>Cena {this.props.item.price}</p>
                     </div>
-                    </NavLink>
-                </div>
-
+                </NavLink>
+            </div>
         );
     }
 
@@ -182,9 +182,9 @@ class Shop extends Component{
     render() {
         return (
             <div className={'shopPage'}>
-                <SearchBar />
+                <SearchBar numberOfProducts={numberOfProducts} sum={sum} />
                 <ShopMenu />
-                <NewItems newItems={newItems}/>
+                <NewProducts items={newProducts}/>
                 <ShopList />
             </div>
         );

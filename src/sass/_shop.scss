@@ -1,5 +1,7 @@
 .shopPage{
-
+  .row{
+    margin: 0 0;
+  }
   width: 100%;
 
   .searchbar{
@@ -10,16 +12,24 @@
     background-color: white;
     border-radius: 2rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
-    .col-6{
+    .search{
+      display: flex;
       border: 1px coral solid;
       border-radius: 2rem;
+      flex-wrap: nowrap;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
       input{
         width: 80%;
         border: none;
         height: 4rem;
         padding-left: 1rem;
         border-radius: 2rem;
+
         &:focus{
           outline: none;
         }
@@ -29,7 +39,7 @@
         transform: translateX(1rem);
         border-radius: 2rem;
         height: 4rem;
-        width: 20%;
+        min-width: 30%;
         color: white;
         background-color: #37a6df;
         &:focus{
@@ -44,6 +54,20 @@
     background-color: #ed5b31;
   }
 
+  .basket{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    button{
+      padding: 0 0;
+      align-self: center;
+      background-color: #ed5b31;
+      border-radius: 1rem;
+      height: 2rem;
+      width: 80%;
+    }
+  }
   .carousel{
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -114,6 +138,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      li{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        min-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
     }
   }
 
