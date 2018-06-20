@@ -64,8 +64,8 @@ footer {
     align-items: flex-start; }
     .contact .map h2 {
       margin-bottom: 1rem; }
-  .contact .col-4, .contact .col-8 {
-    min-width: 200px; }
+  .contact .col-3, .contact .col-8 {
+    min-width: 300px; }
   .contact .col-12 {
     padding-right: 0; }
   .contact h3 {
@@ -115,7 +115,21 @@ footer {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
-    justify-content: center; }
+    justify-content: center;
+    align-items: center; }
+    .contact ul li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FCF9EE;
+      border-radius: 2rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding: 0 0;
+      box-shadow: 2px 2px 9px #C4BCC4; }
 
 .loginForm {
   margin: 0 0;
@@ -179,8 +193,34 @@ nav {
     nav a:hover {
       text-decoration: #007bff underline; }
 
+.searchbar {
+  min-height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+  .searchbar .col-6 input {
+    width: 80%; }
+
+.shopmenu {
+  background: #cb60b3;
+  min-height: 5rem; }
+  .shopmenu a {
+    color: white; }
+    .shopmenu a:hover {
+      text-decoration: white underline; }
+  .shopmenu ul {
+    width: 100%;
+    margin: 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
 body {
-  background-color: #FAF5D6; }
+  background-color: #FCFAE8; }
 
 .main {
   display: flex;
@@ -264,7 +304,7 @@ a {
     text-align: center; }
 
 .mainContent {
-  min-height: 100rem;
+  min-height: 50rem;
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -1,0 +1,35 @@
+.searchbar{
+  min-height: 10rem ;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  .col-6{
+    input{
+      width: 80%;
+    }
+  }
+
+}
+
+.shopmenu{
+  background: rgba(203,96,179,1);
+
+  min-height: 5rem;
+  a{
+    color: white;
+    &:hover{
+      text-decoration: white underline;
+    }
+  }
+  ul{
+    width: 100%;
+    margin: 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

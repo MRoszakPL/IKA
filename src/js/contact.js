@@ -62,7 +62,7 @@ class ListElement extends Component{
     render() {
         const {name, city, street, main, fax, kom, email} = this.props.data;
         return (
-            <li className={'col-4'}>
+            <li className={'col-3'}>
                 <h4>{name}</h4>
                 <p>Adres: {city}</p>
                 <p>{street}</p>

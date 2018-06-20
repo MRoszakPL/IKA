@@ -107,7 +107,7 @@ class Main extends Component{
             <div className={'mainContent'}>
                 <ImageJumbotron/>
                 <Gallery/>
-                <Info/>
+                {/*<Info/>*/}
             </div>
         );
     }

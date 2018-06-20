@@ -2,9 +2,9 @@
 @import './_contact.scss';
 @import './_login.scss';
 @import './_navbar.scss';
-
+@import './_shop.scss';
 body{
-  background-color: #FAF5D6;
+  background-color: #FCFAE8;
 }
 
 .main {
@@ -105,7 +105,7 @@ a {
 
 
 .mainContent{
-  min-height: 100rem;
+  min-height: 50rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
