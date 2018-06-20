@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "Maciej",
+      "password": "dadada",
+      "level": 1
+    },
+    {
+      "id": 2,
+      "login": "Mateusz",
+      "password": "sasasa",
+      "level": 0
+    }
+  ]
+}

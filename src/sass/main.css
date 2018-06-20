@@ -172,8 +172,9 @@ footer {
       background-color: #C4BCC4;
       border-radius: 2rem;
       margin-top: 2rem;
-      margin-bottom: 6rem;
       color: white; }
+    .loginForm form a {
+      justify-self: flex-end; }
 
 nav {
   background-color: #37a6df;
