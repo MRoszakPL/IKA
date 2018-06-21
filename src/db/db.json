@@ -21,37 +21,44 @@
       "name": "Rękawice nitrylowe Aloes",
       "price": "3.30",
       "src": "nitryloweAloes.jpg",
-      "type": "master"
+      "type": "master",
+      "category": "gloves"
     },
     {
       "name": "Papier do pieczenia",
       "price": "4.09",
       "src": "papierdopieczenia.jpg",
-      "type": "master"
+      "type": "master",
+      "category": "paper"
+
     },
     {
       "name": "Mop z mikrofibry",
       "price": "5.29",
       "src": "mopzmikrofibry.jpg",
-      "type": "master"
+      "type": "master",
+      "category": "mops"
     },
     {
       "name": "Worki na śmieci",
       "price": "6.49",
       "src": "workinasmieci.jpg",
-      "type": "master"
+      "type": "master",
+      "category": "trashBag"
     },
     {
       "name": "Ścierka z mikrofibry",
       "price": "2.30",
       "src": "scierkazmikrofibry.jpg",
-      "type": "master"
+      "type": "master",
+      "category": "wiper"
     },
     {
       "name": "Ścierki MORANA",
       "price": "10.20",
       "src": "scierkiMorana.jpg",
-      "type": "morana"
+      "type": "morana",
+      "category": "wiper"
     }
   ]
 }

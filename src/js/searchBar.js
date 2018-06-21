@@ -9,8 +9,7 @@ import logo from '../images/logo.png';
 const Button = withRouter(({ history }) => (
     <button className={'basketButton'}
             type='button'
-            onClick={() => { history.push('/basket') }}
-    >
+            onClick={() => { history.push('/basket') }}>
         Do koszyka
     </button>
 ))
@@ -21,7 +20,7 @@ class Basket extends Component{
 
         return (
             <div className={'col-md basket'}>
-                <p>{this.props.numberOfProducts>0 ? 'Liczba produktów '+this.props.numberOfProducts : 'Pusto'}</p>
+                <p>{this.props.numberOfProducts>0 ? 'Liczba produktów: '+this.props.numberOfProducts : 'Pusto'}</p>
                 <p>Koszt {this.props.sum}</p>
                 <Button />
             </div>

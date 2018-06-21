@@ -1,4 +1,87 @@
-.firstRow{
-  display: flex;
+.basket {
 
+    align-items: center;
+    justify-content: center;
+    @mixin colorWithUnderline ($color, $borderColor){
+      color: $color;
+      border-bottom: 1px solid $borderColor;
+    }
+
+  .row{
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+  }
+  .head{
+    @include colorWithUnderline(#007bff,cornflowerblue)
+  }
+  .number{
+    @include colorWithUnderline(#ed5b31, #ed5b31)
+  }
+  .price{
+    @include colorWithUnderline(#007bff,cornflowerblue)
+  }
+  .sum{
+    @include colorWithUnderline(#ed5b31, #ed5b31)
+  }
+
+  .finalCost{
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid #ed5b31;
+    font-size: 2rem;
+    color: #37a6df;
+
+  }
+
+  .deleteButton{
+    background-color: #ed5b31;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  ul{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 0;
+    list-style: none;
+    flex-direction: column;
+    width: 100%;
+    border: #007bff;
+    border-radius: 2rem;
+  }
+
+  p{
+    margin-left: 0;
+  }
+
+  li:nth-of-type(2n) .listElement{
+    color: #37a6df;
+  }
+
+
+  li>div{
+    display: flex;
+    color: #ed5b31;
+    font-size: 1rem;
+
+  }
+
+  .navButtons{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    button{
+      background-color: #37a6df;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
 }

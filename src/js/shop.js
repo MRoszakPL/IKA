@@ -42,9 +42,6 @@ const newProducts = [
     },
 ];
 
-let numberOfProducts = (downloadData('numberOfProducts')) ? downloadData('numberOfProducts') : 0;
-let sum =  (downloadData('sum')) ? downloadData('sum') : '0.00' ;
-
 class NewProducts extends Component {
 
     render() {
@@ -92,7 +89,10 @@ class NewProducts extends Component {
 
 class NewProduct extends Component{
 
+
+
     render() {
+
         return (
             <div className={'carousel-item'+ this.props.hide}>
                 <NavLink to={'/shop/'+this.props.index}>
@@ -110,10 +110,29 @@ class NewProduct extends Component{
 
 class Shop extends Component{
 
+    constructor(props) {
+        super(props);
+        this.state ={
+            numOfProducts: (downloadData('numberOfProducts')>0) ? downloadData('numberOfProducts') : 'Pusto',
+            sum: (downloadData('sum')) ? downloadData('sum') : '0.00'
+        }
+    }
+
+
+    componentDidMount() {
+        this.setState ={
+            numOfProducts: (downloadData('numberOfProducts')>0) ? downloadData('numberOfProducts') : 'Pusto',
+            sum: (downloadData('sum')) ? downloadData('sum') : '0.00'
+        }
+    }
+
+
     render() {
+
+
         return (
             <div className={'shopPage'}>
-                <SearchBar numberOfProducts={numberOfProducts} sum={sum} />
+                <SearchBar numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                 <ShopMenu />
                 <NewProducts items={newProducts}/>
 

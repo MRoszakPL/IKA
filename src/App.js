@@ -19,8 +19,9 @@ import NoMatch from './js/nomatch';
 import Footer from "./js/footer";
 import MyAccount from "./js/myAccount";
 import Product from "./js/product";
-import ListOfProducts from "./js/listOfProducts";
+import SubCategory from "./js/subcategory";
 import MainCategories from "./js/mainCategories";
+
 
 class App extends Component {
   render() {
@@ -38,7 +39,7 @@ class App extends Component {
                     <Route path='/login' component={LogIn}/>
                     <Route path='/basket' component={Basket}/>
                     <Route path='/myAccount' component={MyAccount}/>
-                    <Route path='/shop/:mainTheme/:product' component={ListOfProducts}/>
+                    <Route path='/shop/:mainTheme/:product' component={SubCategory}/>
                     <Route path={'product/:id'} component={Product}/>
                     <Route component={NoMatch}/>
                 </Switch>

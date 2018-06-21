@@ -43,13 +43,13 @@ class ShopMenu extends Component{
         return (
             <div className={'container shopmenu'} >
                 <ul>
-                    <ShopMenuElement urlValue = {'master'} name={items[0].mainTheme} items={items[0]}/>
-                    <ShopMenuElement urlValue = {'morana'} name={items[1].mainTheme} items={items[1]}/>
-                    <ShopMenuElement urlValue = {'bags'} name={items[2].mainTheme} items={items[2]}/>
-                    <ShopMenuElement urlValue = {'package'} name={items[3].mainTheme} items={items[3]}/>
-                    <ShopMenuElement urlValue = {'gloves'} name={items[4].mainTheme} items={items[4]}/>
-                    <ShopMenuElement urlValue = {'hygienicArticles'} name={items[5].mainTheme} items={items[5]}/>
-                    <ShopMenuElement urlValue = {'professionalCleaning'} name={items[6].mainTheme} items={items[6]}/>
+                    <ShopMenuElement clickFnc={this.props.clickFnc} urlValue = {'master'} name={items[0].mainTheme} items={items[0]}/>
+                    <ShopMenuElement clickFnc={this.props.clickFnc} urlValue = {'morana'} name={items[1].mainTheme} items={items[1]}/>
+                    <ShopMenuElement clickFnc={this.props.clickFnc} urlValue = {'bags'} name={items[2].mainTheme} items={items[2]}/>
+                    <ShopMenuElement clickFnc={this.props.clickFnc} urlValue = {'package'} name={items[3].mainTheme} items={items[3]}/>
+                    <ShopMenuElement clickFnc={this.props.clickFnc} urlValue = {'gloves'} name={items[4].mainTheme} items={items[4]}/>
+                    <ShopMenuElement clickFnc={this.props.clickFnc} urlValue = {'hygienicArticles'} name={items[5].mainTheme} items={items[5]}/>
+                    <ShopMenuElement clickFnc={this.props.clickFnc} urlValue = {'professionalCleaning'} name={items[6].mainTheme} items={items[6]}/>
                 </ul>
             </div>
         );
@@ -59,15 +59,21 @@ class ShopMenu extends Component{
 
 class ShopMenuElement extends Component{
 
+
+
+    clickHandler = (e) => {
+        this.props.clickFnc(this.props.urlValue, e.currentTarget.name);
+    }
     render() {
 
         const {name, value} = this.props.items;
         let list = [];
         for(let i = 0; i< name.length; i++) {
-            list.push(<NavLink key={name[i]} to={'/shop/' + this.props.urlValue + '/' + value[i]}>{name[i]}</NavLink>)
+
+            list.push(<NavLink  onClick={(this.props.clickFnc) && this.clickHandler} key={name[i]} name={value[i]} to={'/shop/' + this.props.urlValue + '/' + value[i]}>{name[i]}</NavLink>)
         }
         return (
-            <li className={'col-sm'}>
+            <li  className={'col-sm'}>
                 <div className="dropdown">
                     <button className="dropbtn">{this.props.name}</button>
                     <div className="dropdown-content">
@@ -78,7 +84,5 @@ class ShopMenuElement extends Component{
         );
     }
 }
-
-
 
 export default ShopMenu;

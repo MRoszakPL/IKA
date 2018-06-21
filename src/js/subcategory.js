@@ -3,6 +3,7 @@ import SearchBar from "./searchBar";
 import ShopMenu from "./shopBar";
 import ListOfProducts from "./listOfProducts"
 
+
 //Send data with set name and conten//t
 function sendData(name, content) {
     localStorage.setItem(name, JSON.stringify( content ) );
@@ -15,8 +16,7 @@ function downloadData(name) {
 
 
 
-
-class MainCategories extends Component{
+class SubCategory extends Component{
 
     constructor(props) {
         super(props);
@@ -78,7 +78,10 @@ class MainCategories extends Component{
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3001/products?type=${this.props.match.params.mainTheme}`,{
+        console.log(this.props.match.params.product);
+        console.log(this.props.match.params.mainTheme);
+
+        fetch(`http://localhost:3001/products?type=${this.props.match.params.mainTheme}&category=${this.props.match.params.product}`,{
             method: 'GET',
         }).then( resp => {
             if (resp.ok)
@@ -86,7 +89,7 @@ class MainCategories extends Component{
             else
                 throw new Error('Błąd sieci!');
         }).then( resp => {
-
+            console.log(resp);
             if(resp !== '[]'){
                 this.setState({
                     products: resp,
@@ -98,25 +101,50 @@ class MainCategories extends Component{
         });
     }
 
-  x
+    changeSiteHandler = (mainCategory, subcategory) =>{
+
+        console.log(mainCategory);
+        console.log(subcategory);
+        fetch(`http://localhost:3001/products?type=${mainCategory}&category=${subcategory}`,{
+            method: 'GET',
+        }).then( resp => {
+            if (resp.ok)
+                return resp.json();
+            else
+                throw new Error('Błąd sieci!');
+        }).then( resp => {
+            console.log(resp);
+            if(resp !== '[]'){
+
+                console.log(this.state.isLoaded)
+                this.setState({
+                    products: resp,
+                    isLoaded: true
+                })
+            }
+        }).catch( err => {
+            console.log('Błąd!', err);
+        });
+    }
+
 
     render() {
-        console.log(this.state.numOfProducts)
-        return  (
+        return (
             <div className={'container Categories'}>
                 <div className={'row'}>
-                    <SearchBar numofproducts={this.state.numOfProducts} sum={this.state.sum} />
-                    <ShopMenu/>
-                    <h1>
-                        {this.props.match.params.mainTheme}
-                    </h1>
+                <SearchBar  numofproducts={downloadData('numberOfProducts')} sum={downloadData('sum')} />
+                <ShopMenu clickFnc={this.changeSiteHandler}/>
+                <h1>
+                    {this.props.match.params.mainTheme} - {this.props.match.params.product}
+                </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>
             </div>
-            )
-
+        );
     }
 
-};
+}
 
-export default MainCategories;
+
+
+export default SubCategory;

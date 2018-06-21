@@ -394,10 +394,10 @@ nav {
 .myAccount h2 {
   margin-top: 2rem; }
 
-.mainCategories .row {
+.Categories .row {
   margin-left: 0; }
 
-.mainCategories h1 {
+.Categories h1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -409,13 +409,13 @@ nav {
   color: white;
   margin-top: 1rem; }
 
-.mainCategories ul.listOfProducts {
+.Categories ul.listOfProducts {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-left: 0; }
 
-.mainCategories .productElement {
+.Categories .productElement {
   width: 100%;
   min-height: 20rem;
   display: flex;
@@ -425,35 +425,35 @@ nav {
   border: 2px solid cornflowerblue;
   border-radius: 3rem;
   margin-bottom: 1rem; }
-  .mainCategories .productElement:hover {
+  .Categories .productElement:hover {
     box-shadow: 0 0 5px #ed5b31; }
-  .mainCategories .productElement .productImage {
+  .Categories .productElement .productImage {
     margin-top: 2rem;
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center; }
-    .mainCategories .productElement .productImage img {
+    .Categories .productElement .productImage img {
       width: auto;
       height: 100%; }
-  .mainCategories .productElement .productText {
+  .Categories .productElement .productText {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-top: 2rem;
     margin-bottom: 2rem; }
-    .mainCategories .productElement .productText div {
+    .Categories .productElement .productText div {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       margin-bottom: 1rem; }
-    .mainCategories .productElement .productText input {
+    .Categories .productElement .productText input {
       width: 20%;
       height: 2rem;
       text-align: center; }
-    .mainCategories .productElement .productText button {
+    .Categories .productElement .productText button {
       margin-left: 0.2rem;
       margin-right: 0.2rem;
       width: 60%;
@@ -462,13 +462,80 @@ nav {
       height: 2rem;
       color: white;
       font-weight: bold; }
-      .mainCategories .productElement .productText button:focus {
+      .Categories .productElement .productText button:focus {
         outline: none; }
-      .mainCategories .productElement .productText button.operation {
+      .Categories .productElement .productText button.operation {
         width: 20%; }
 
-.firstRow {
-  display: flex; }
+.subcategory h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #37a6df;
+  width: 100%;
+  height: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 1rem; }
+
+.basket {
+  align-items: center;
+  justify-content: center; }
+  .basket .row {
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .basket .head {
+    color: #007bff;
+    border-bottom: 1px solid cornflowerblue; }
+  .basket .number {
+    color: #ed5b31;
+    border-bottom: 1px solid #ed5b31; }
+  .basket .price {
+    color: #007bff;
+    border-bottom: 1px solid cornflowerblue; }
+  .basket .sum {
+    color: #ed5b31;
+    border-bottom: 1px solid #ed5b31; }
+  .basket .finalCost {
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid #ed5b31;
+    font-size: 2rem;
+    color: #37a6df; }
+  .basket .deleteButton {
+    background-color: #ed5b31; }
+    .basket .deleteButton:focus {
+      outline: none; }
+  .basket ul {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 0;
+    list-style: none;
+    flex-direction: column;
+    width: 100%;
+    border: #007bff;
+    border-radius: 2rem; }
+  .basket p {
+    margin-left: 0; }
+  .basket li:nth-of-type(2n) .listElement {
+    color: #37a6df; }
+  .basket li > div {
+    display: flex;
+    color: #ed5b31;
+    font-size: 1rem; }
+  .basket .navButtons {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem; }
+    .basket .navButtons button {
+      background-color: #37a6df;
+      margin-left: 1rem;
+      margin-right: 1rem; }
 
 body {
   background-color: #FCFAE8; }
