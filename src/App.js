@@ -18,6 +18,9 @@ import Basket from "./js/basket";
 import NoMatch from './js/nomatch';
 import Footer from "./js/footer";
 import MyAccount from "./js/myAccount";
+import Product from "./js/product";
+import ListOfProducts from "./js/listOfProducts";
+import MainCategories from "./js/mainCategories";
 
 class App extends Component {
   render() {
@@ -29,11 +32,14 @@ class App extends Component {
                 <Switch>
                     <Route exact path='/' component={Main}/>
                     <Route path='/blog' component={Blog}/>
-                    <Route path='/shop' component={Shop}/>
+                    <Route exact path='/shop' component={Shop}/>
+                    <Route exact path='/shop/:mainTheme' component={MainCategories}/>
                     <Route path='/contact' component={Contact}/>
                     <Route path='/login' component={LogIn}/>
                     <Route path='/basket' component={Basket}/>
                     <Route path='/myAccount' component={MyAccount}/>
+                    <Route path='/shop/:mainTheme/:product' component={ListOfProducts}/>
+                    <Route path={'product/:id'} component={Product}/>
                     <Route component={NoMatch}/>
                 </Switch>
                 <Footer/>

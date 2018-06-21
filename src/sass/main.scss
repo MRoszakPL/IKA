@@ -4,7 +4,8 @@
 @import './_navbar.scss';
 @import './_shop.scss';
 @import './_myAccount.scss';
-
+@import './_mainCategories.scss';
+@import './_basket.scss';
 body{
   background-color: #FCFAE8;
 }
@@ -105,6 +106,10 @@ a {
     color: cornflowerblue;
     text-align: center;
   }
+  &:hover{
+    animation: changingColor 1s linear forwards;
+  }
+
 
 }
 
@@ -189,3 +194,6 @@ button{
   border: none;
 }
 
+@keyframes changingColor{
+  100%{background-color: #ed5b31}
+}

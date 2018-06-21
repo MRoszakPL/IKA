@@ -15,5 +15,43 @@
       "password": "sasasa",
       "level": 0
     }
+  ],
+  "products": [
+    {
+      "name": "Rękawice nitrylowe Aloes",
+      "price": "3.30",
+      "src": "nitryloweAloes.jpg",
+      "type": "master"
+    },
+    {
+      "name": "Papier do pieczenia",
+      "price": "4.09",
+      "src": "papierdopieczenia.jpg",
+      "type": "master"
+    },
+    {
+      "name": "Mop z mikrofibry",
+      "price": "5.29",
+      "src": "mopzmikrofibry.jpg",
+      "type": "master"
+    },
+    {
+      "name": "Worki na śmieci",
+      "price": "6.49",
+      "src": "workinasmieci.jpg",
+      "type": "master"
+    },
+    {
+      "name": "Ścierka z mikrofibry",
+      "price": "2.30",
+      "src": "scierkazmikrofibry.jpg",
+      "type": "master"
+    },
+    {
+      "name": "Ścierki MORANA",
+      "price": "10.20",
+      "src": "scierkiMorana.jpg",
+      "type": "morana"
+    }
   ]
 }

@@ -36,6 +36,16 @@
     min-width: 300px;
   }
 
+  .col-3{
+    &:hover{
+      animation: changingColor 1.5s linear forwards;
+    }
+  }
+
+  @keyframes changingColor {
+    100% { background-color: lightblue}
+  }
+
   .col-12{
     padding-right: 0;
   }

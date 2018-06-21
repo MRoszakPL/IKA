@@ -69,6 +69,12 @@ footer {
     align-items: flex-start; }
   .contact .col-3, .contact .col-8 {
     min-width: 300px; }
+  .contact .col-3:hover {
+    animation: changingColor 1.5s linear forwards; }
+
+@keyframes changingColor {
+  100% {
+    background-color: lightblue; } }
   .contact .col-12 {
     padding-right: 0; }
   .contact h3 {
@@ -201,58 +207,8 @@ nav {
   width: 100%; }
   .shopPage .row {
     margin: 0 0; }
-  .shopPage .searchbar {
-    min-height: 10rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    border-radius: 2rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem; }
-    .shopPage .searchbar .search {
-      display: flex;
-      border: 1px coral solid;
-      border-radius: 2rem;
-      flex-wrap: nowrap;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      margin-right: 1rem;
-      margin-left: 1rem; }
-      .shopPage .searchbar .search input {
-        width: 80%;
-        border: none;
-        height: 4rem;
-        padding-left: 1rem;
-        border-radius: 2rem; }
-        .shopPage .searchbar .search input:focus {
-          outline: none; }
-      .shopPage .searchbar .search button {
-        box-sizing: border-box;
-        transform: translateX(1rem);
-        border-radius: 2rem;
-        height: 4rem;
-        min-width: 30%;
-        color: white;
-        background-color: #37a6df; }
-        .shopPage .searchbar .search button:focus {
-          outline: none;
-          border: 1px #cb60b3 solid; }
   .shopPage .carousel-control-prev, .shopPage .carousel-control-next {
     background-color: #ed5b31; }
-  .shopPage .basket {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column; }
-    .shopPage .basket button {
-      padding: 0 0;
-      align-self: center;
-      background-color: #ed5b31;
-      border-radius: 1rem;
-      height: 2rem;
-      width: 80%; }
   .shopPage .carousel {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -282,6 +238,8 @@ nav {
           align-items: center; }
           .shopPage .carousel .carousel-item a > div h5 {
             margin-top: 1rem; }
+          .shopPage .carousel .carousel-item a > div img {
+            width: 70%; }
   .shopPage .carousel-caption {
     color: #37a6df; }
   .shopPage h2 {
@@ -290,59 +248,116 @@ nav {
     color: #ed5b31;
     font-weight: bold;
     z-index: 10; }
-  .shopPage .shopmenu {
-    background: #cb60b3;
-    min-height: 5rem; }
-    .shopPage .shopmenu a {
-      color: white; }
-      .shopPage .shopmenu a:hover {
-        text-decoration: white underline; }
-    .shopPage .shopmenu ul {
-      list-style: none;
-      padding-left: 0;
-      width: 100%;
-      margin: 0 2rem;
+
+.shopmenu {
+  background: #cb60b3;
+  min-height: 5rem; }
+  .shopmenu a {
+    color: white; }
+    .shopmenu a:hover {
+      text-decoration: white underline; }
+  .shopmenu ul {
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    margin: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; }
+    .shopmenu ul li {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; }
-      .shopPage .shopmenu ul li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem; }
-    .shopPage .shopmenu .dropbtn {
-      background-color: #cb60b3;
-      color: white;
-      height: 3rem;
-      width: 8rem;
-      font-size: 16px;
-      border: none; }
-      .shopPage .shopmenu .dropbtn:focus {
+      justify-content: center;
+      min-height: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem; }
+  .shopmenu .dropbtn {
+    background-color: #cb60b3;
+    color: white;
+    height: 3rem;
+    width: 8rem;
+    font-size: 16px;
+    border: none; }
+    .shopmenu .dropbtn:focus {
+      outline: none; }
+  .shopmenu .dropdown {
+    position: relative;
+    display: inline-block; }
+  .shopmenu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1; }
+  .shopmenu .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; }
+  .shopmenu .dropdown-content a:hover {
+    background-color: #ddd; }
+  .shopmenu .dropdown:hover .dropdown-content {
+    display: block; }
+  .shopmenu .dropdown:hover .dropbtn {
+    background-color: #ed5b31; }
+
+.basket {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column; }
+  .basket p {
+    margin-left: 10%; }
+  .basket button {
+    padding: 0 0;
+    align-self: center;
+    background-color: #007bff;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 1rem;
+    height: 2rem;
+    width: 80%; }
+
+.searchbar {
+  min-height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem; }
+  .searchbar .search {
+    display: flex;
+    border: 1px coral solid;
+    border-radius: 2rem;
+    flex-wrap: nowrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem; }
+    .searchbar .search input {
+      width: 80%;
+      border: none;
+      height: 4rem;
+      padding-left: 1rem;
+      border-radius: 2rem; }
+      .searchbar .search input:focus {
         outline: none; }
-    .shopPage .shopmenu .dropdown {
-      position: relative;
-      display: inline-block; }
-    .shopPage .shopmenu .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1; }
-    .shopPage .shopmenu .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block; }
-    .shopPage .shopmenu .dropdown-content a:hover {
-      background-color: #ddd; }
-    .shopPage .shopmenu .dropdown:hover .dropdown-content {
-      display: block; }
-    .shopPage .shopmenu .dropdown:hover .dropbtn {
-      background-color: #ed5b31; }
+    .searchbar .search button {
+      box-sizing: border-box;
+      transform: translateX(1rem);
+      border-radius: 2rem;
+      height: 4rem;
+      min-width: 30%;
+      color: white;
+      background-color: #37a6df; }
+      .searchbar .search button:focus {
+        outline: none;
+        border: 1px #cb60b3 solid; }
 
 .myAccount.row {
   margin: 0 0;
@@ -378,6 +393,82 @@ nav {
 
 .myAccount h2 {
   margin-top: 2rem; }
+
+.mainCategories .row {
+  margin-left: 0; }
+
+.mainCategories h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #37a6df;
+  width: 100%;
+  height: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 1rem; }
+
+.mainCategories ul.listOfProducts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 0; }
+
+.mainCategories .productElement {
+  width: 100%;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid cornflowerblue;
+  border-radius: 3rem;
+  margin-bottom: 1rem; }
+  .mainCategories .productElement:hover {
+    box-shadow: 0 0 5px #ed5b31; }
+  .mainCategories .productElement .productImage {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .mainCategories .productElement .productImage img {
+      width: auto;
+      height: 100%; }
+  .mainCategories .productElement .productText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
+    .mainCategories .productElement .productText div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 1rem; }
+    .mainCategories .productElement .productText input {
+      width: 20%;
+      height: 2rem;
+      text-align: center; }
+    .mainCategories .productElement .productText button {
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+      width: 60%;
+      background-color: #ed5b31;
+      border-radius: 1rem;
+      height: 2rem;
+      color: white;
+      font-weight: bold; }
+      .mainCategories .productElement .productText button:focus {
+        outline: none; }
+      .mainCategories .productElement .productText button.operation {
+        width: 20%; }
+
+.firstRow {
+  display: flex; }
 
 body {
   background-color: #FCFAE8; }
@@ -465,6 +556,8 @@ a {
     margin-top: 1rem;
     color: cornflowerblue;
     text-align: center; }
+  .galleryElement:hover {
+    animation: changingColor 1s linear forwards; }
 
 .mainContent {
   min-height: 50rem;
@@ -526,3 +619,7 @@ a {
 button {
   background-color: inherit;
   border: none; }
+
+@keyframes changingColor {
+  100% {
+    background-color: #ed5b31; } }
