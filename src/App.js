@@ -20,8 +20,8 @@ import Footer from "./js/footer";
 import MyAccount from "./js/myAccount";
 import Product from "./js/product";
 import SubCategory from "./js/subcategory";
+import MyOrders from "./js/myOrders";
 import MainCategories from "./js/mainCategories";
-
 
 class App extends Component {
   render() {
@@ -41,6 +41,7 @@ class App extends Component {
                     <Route path='/myAccount' component={MyAccount}/>
                     <Route path='/shop/:mainTheme/:product' component={SubCategory}/>
                     <Route path={'product/:id'} component={Product}/>
+                    <Route path={'/myOrders'} component={MyOrders}/>
                     <Route component={NoMatch}/>
                 </Switch>
                 <Footer/>

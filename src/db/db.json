@@ -90,48 +90,6 @@
         3.3
       ],
       "sum": 16.5,
-      "id": 2
-    },
-    {
-      "name": [
-        "Rękawice nitrylowe Aloes"
-      ],
-      "numberOfProducts": 2,
-      "numbers": [
-        2
-      ],
-      "prices": [
-        3.3
-      ],
-      "sum": 6.6,
-      "id": 3
-    },
-    {
-      "name": [
-        "Rękawice nitrylowe Aloes"
-      ],
-      "numberOfProducts": 3,
-      "numbers": [
-        3
-      ],
-      "prices": [
-        3.3
-      ],
-      "sum": 9.9,
-      "id": 4
-    },
-    {
-      "name": [
-        "Rękawice nitrylowe Aloes"
-      ],
-      "numberOfProducts": 5,
-      "numbers": [
-        5
-      ],
-      "prices": [
-        3.3
-      ],
-      "sum": 16.5,
       "id": 5
     },
     {
@@ -178,6 +136,30 @@
       "sum": 13.2,
       "pay": false,
       "id": 8
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes",
+        "Papier do pieczenia",
+        "Mop z mikrofibry",
+        "Ścierka z mikrofibry"
+      ],
+      "numberOfProducts": 7,
+      "numbers": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "prices": [
+        3.3,
+        4.09,
+        5.29,
+        2.3
+      ],
+      "sum": 44.45,
+      "pay": false,
+      "id": 9
     }
   ]
 }

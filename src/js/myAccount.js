@@ -59,7 +59,7 @@ class Basket extends Component{
                         <li>E-mail: {this.state.info[0].email}</li>
                         <li>Typ użytkownika: {this.state.info[0].level ? 'Klient' : 'Administrator'}</li>
                     </ul>
-                    <button>Zamówienia</button>
+                    <button onClick={this.props.history.push('/myOrders')}>Zamówienia</button>
 
                     <button>Edytuj dane</button>
                     <button>Zmień hasło</button>

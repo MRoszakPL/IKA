@@ -560,6 +560,58 @@ nav {
       margin-left: 1rem;
       margin-right: 1rem; }
 
+.orders {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .orders.container {
+    flex-direction: column; }
+  .orders .head p {
+    border-bottom: 1px solid #37a6df;
+    padding-right: 5rem; }
+  .orders ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; }
+  .orders li {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; }
+    .orders li.listElement {
+      border: 1px solid #ed5b31; }
+    .orders li ul {
+      margin-top: 1rem;
+      padding-left: 0; }
+      .orders li ul li {
+        max-width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        border: 1px solid #37a6df;
+        padding-left: 1rem;
+        padding-right: 1rem; }
+    .orders li div {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row; }
+    .orders li p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem; }
+  .orders .invisible {
+    display: none; }
+
 body {
   background-color: #FCFAE8; }
 
