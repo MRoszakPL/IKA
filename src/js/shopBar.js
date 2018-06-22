@@ -62,7 +62,7 @@ class ShopMenuElement extends Component{
 
 
     clickHandler = (e) => {
-        this.props.clickFnc(this.props.urlValue, e.currentTarget.name);
+        this.props.clickFnc(this.props.urlValue, e.currentTarget.name, e.currentTarget.innerText, this.props.items.mainTheme);
     }
     render() {
 

@@ -3,17 +3,45 @@ import SearchBar from "./searchBar";
 import ShopMenu from "./shopBar";
 import ListOfProducts from "./listOfProducts"
 
-//Send data with set name and conten//t
+//Send data with set name and content
 function sendData(name, content) {
     localStorage.setItem(name, JSON.stringify( content ) );
 }
 
 //Download data with set name
 function downloadData(name) {
-    return JSON.parse( localStorage.getItem(name) );
+    return JSON.parse( (localStorage.getItem(name)) ? localStorage.getItem(name) : 0 );
 }
 
+function setLanguage(value) {
 
+
+    switch(value){
+        case 'master':
+            return  'Master';
+
+        case 'morana':
+            return  'Morana';
+
+        case 'package':
+            return  'Opakowania';
+
+        case 'bags':
+            return  'Reklamówki';
+
+        case 'hygienicArticles':
+            return  'Artykuły higeniczne';
+
+        case 'gloves':
+            return  'Rękawiczki';
+
+        case 'professionalCleaning':
+            return  'Profesjonalne sprzątanie';
+    }
+
+
+
+}
 
 
 class MainCategories extends Component{
@@ -24,7 +52,8 @@ class MainCategories extends Component{
             products: [],
             isLoaded: false,
             numOfProducts: (downloadData('numberOfProducts')) ? downloadData('numberOfProducts') : 0,
-            sum: (downloadData('sum')) ? downloadData('sum') : '0.00'
+            sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
+
         }
 
     }
@@ -108,7 +137,7 @@ class MainCategories extends Component{
                     <SearchBar numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                     <ShopMenu/>
                     <h1>
-                        {this.props.match.params.mainTheme}
+                        {setLanguage(this.props.match.params.mainTheme)}
                     </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>

@@ -1,4 +1,11 @@
 .basket {
+    >div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
 
     align-items: center;
     justify-content: center;
@@ -44,6 +51,22 @@
     }
   }
 
+  .operationMinus{
+    min-width: 20%;
+    background-color: #ed5b31;
+    margin-right: 1rem;
+  }
+
+  input{
+    min-width: 40%;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .operationAdd{
+    min-width: 20%;
+    margin-left: 1rem;
+  }
+
   ul{
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -51,7 +74,7 @@
     list-style: none;
     flex-direction: column;
     width: 100%;
-    border: #007bff;
+    border: #37a6df;
     border-radius: 2rem;
   }
 
@@ -59,10 +82,17 @@
     margin-left: 0;
   }
 
-  li:nth-of-type(2n) .listElement{
-    color: #37a6df;
+   .listElement{
+    color: gray;
   }
 
+  .listElement{
+    .col-2{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
   li>div{
     display: flex;
@@ -84,4 +114,5 @@
       margin-right: 1rem;
     }
   }
+
 }

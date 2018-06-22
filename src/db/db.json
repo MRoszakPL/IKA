@@ -7,7 +7,7 @@
       "level": 1,
       "name": "Maciej",
       "surename": "Roszak",
-        "email" : "roszak.maciej.msg@gmai.com"
+      "email": "roszak.maciej.msg@gmai.com"
     },
     {
       "id": 2,
@@ -30,7 +30,6 @@
       "src": "papierdopieczenia.jpg",
       "type": "master",
       "category": "paper"
-
     },
     {
       "name": "Mop z mikrofibry",
@@ -59,6 +58,126 @@
       "src": "scierkiMorana.jpg",
       "type": "morana",
       "category": "wiper"
+    }
+  ],
+  "order": [
+    {
+      "name": [
+        "Mop z mikrofibry",
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 5,
+      "numbers": [
+        4,
+        1
+      ],
+      "prices": [
+        5.29,
+        3.3
+      ],
+      "sum": 24.46,
+      "id": 1
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 5,
+      "numbers": [
+        5
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 16.5,
+      "id": 2
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 2,
+      "numbers": [
+        2
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 6.6,
+      "id": 3
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 3,
+      "numbers": [
+        3
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 9.9,
+      "id": 4
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 5,
+      "numbers": [
+        5
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 16.5,
+      "id": 5
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 4,
+      "numbers": [
+        4
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 13.2,
+      "pay": false,
+      "id": 6
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 8,
+      "numbers": [
+        8
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 26.4,
+      "pay": false,
+      "id": 7
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 4,
+      "numbers": [
+        4
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 13.2,
+      "pay": false,
+      "id": 8
     }
   ]
 }

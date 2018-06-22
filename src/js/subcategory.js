@@ -11,10 +11,37 @@ function sendData(name, content) {
 
 //Download data with set name
 function downloadData(name) {
-    return JSON.parse( localStorage.getItem(name) );
+    return JSON.parse(localStorage.getItem(name));
 }
 
+function setLanguage(value) {
 
+    switch(value){
+        case 'master':
+            return  'Master';
+
+        case 'morana':
+            return  'Morana';
+
+        case 'package':
+            return  'Opakowania';
+
+        case 'bags':
+            return  'Reklamówki';
+
+        case 'hygienicArticles':
+            return  'Artykuły higeniczne';
+
+        case 'gloves':
+            return  'Rękawiczki';
+
+        case 'professionalCleaning':
+            return  'Profesjonalne sprzątanie';
+    }
+
+
+
+}
 
 class SubCategory extends Component{
 
@@ -24,7 +51,9 @@ class SubCategory extends Component{
             products: [],
             isLoaded: false,
             numOfProducts: (downloadData('numberOfProducts')) ? downloadData('numberOfProducts') : 0,
-            sum: (downloadData('sum')) ? downloadData('sum') : '0.00'
+            sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
+            name : this.props.match.params.product,
+            main: setLanguage(this.props.match.params.mainTheme)
         }
 
     }
@@ -101,7 +130,7 @@ class SubCategory extends Component{
         });
     }
 
-    changeSiteHandler = (mainCategory, subcategory) =>{
+    changeSiteHandler = (mainCategory, subcategory, name, main) =>{
 
         console.log(mainCategory);
         console.log(subcategory);
@@ -119,7 +148,9 @@ class SubCategory extends Component{
                 console.log(this.state.isLoaded)
                 this.setState({
                     products: resp,
-                    isLoaded: true
+                    isLoaded: true,
+                    name: name,
+                    main: main
                 })
             }
         }).catch( err => {
@@ -135,7 +166,7 @@ class SubCategory extends Component{
                 <SearchBar  numofproducts={downloadData('numberOfProducts')} sum={downloadData('sum')} />
                 <ShopMenu clickFnc={this.changeSiteHandler}/>
                 <h1>
-                    {this.props.match.params.mainTheme} - {this.props.match.params.product}
+                    {this.state.main} - {this.state.name}
                 </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>

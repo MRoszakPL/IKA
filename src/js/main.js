@@ -6,22 +6,28 @@ import {
 
 const SliderElements = [
     {   imageName: 'master.jpg',
-        name: 'master'
+        name: 'master',
+        plName: 'Master'
     },
     {   imageName: 'morana.jpg',
-        name: 'morana'
+        name: 'morana',
+        plName: 'Morana'
     },
     {   imageName: 'opakowania.jpg',
-        name: 'opakowania'
+        name: 'package',
+        plName: 'Opakowania'
     },
     {   imageName: 'artykulyhigieniczne.jpg',
-        name: 'artykuły higieniczne'
+        name: 'hygienicArticles',
+        plName: 'Artykuły higieniczne'
     },
     {   imageName: 'gloves.jpg',
-        name: 'Rękawiczki'
+        name: 'gloves',
+        plName: 'Rękawiczki'
     },
     {   imageName: 'professionalCleaning.jpg',
-        name: 'Profesjonalne sprzątanie'
+        name: 'professionalCleaning',
+        plName: 'Profesjonalne sprżątanie'
     },
 ];
 
@@ -30,7 +36,7 @@ class GalleryElement extends Component{
     render() {
             return(<div className={'galleryElement col-sm'}> <NavLink to={'/shop/'+this.props.name}>
                <img  src={`./images/${this.props.image}`} alt={this.props.name}/>
-                <p>{this.props.name}</p></NavLink>
+                <p>{this.props.plName}</p></NavLink>
             </div>);
     };
 }
@@ -38,7 +44,7 @@ class GalleryElement extends Component{
 class Gallery extends Component{
     render() {
         let list = SliderElements.map((element, index)=>{
-            return <GalleryElement key ={index} name={element.name} image={element.imageName}/>;
+            return <GalleryElement key ={index} name={element.name} plName={element.plName} image={element.imageName}/>;
         });
         return (
             <div className={'gallery'}>

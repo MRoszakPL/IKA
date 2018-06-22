@@ -66,7 +66,7 @@ class ListOfProducts extends Component{
     render() {
 
         let list = this.props.products.map((element, index)=>{
-            return <ProductElement clickFnc={this.props.clickFnc} key={index} product={element}/>
+            return <ProductElement clickFnc={this.props.clickFnc} key={element.name} product={element}/>
         })
 
         return (
