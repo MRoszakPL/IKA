@@ -4,6 +4,10 @@
   align-self: center;
   align-items: center;
   justify-content: center;
+
+  .error{
+    border-color: red;
+  }
   .row{
     display: flex;
     flex-wrap: wrap;

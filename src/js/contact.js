@@ -94,6 +94,80 @@ class List extends Component{
 
 class Form extends Component{
 
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            nameValue: '',
+            mailValue: '',
+            messageValue: '',
+            nameError: '',
+            mailError: '',
+            messageError: ''
+        };
+    }
+
+
+    changeHandler = (e) => {
+
+        this.setState({
+            [e.currentTarget.name]: e.currentTarget.value
+        })
+    }
+
+    clickHandler = (e) => {
+            e.preventDefault();
+            let everythingIsOk = true;
+
+            if(this.state.nameValue.length === 0){
+                everythingIsOk = false;
+                this.setState({
+                    nameError: 'error'
+                })
+            }
+            else {
+                this.setState({
+                    nameError: ''
+                })
+            }
+            if(this.state.mailValue.length === 0 || this.state.mailValue.indexOf('@')<0){
+                everythingIsOk = false;
+                this.setState({
+                    mailError: 'error'
+                })
+
+            } else {
+                this.setState({
+                    mailError: ''
+                })
+            }
+
+            if(this.state.messageValue.length === 0){
+                everythingIsOk = false;
+                this.setState({
+                    messageError: 'error'
+                })
+            } else {
+                this.setState({
+                    messageError: ''
+                })
+            }
+
+            if(everythingIsOk){
+                alert('Przesłano wiadomość');
+                this.setState ({
+                    nameValue: '',
+                    mailValue: '',
+                    messageValue: '',
+                    nameError: '',
+                    mailError: '',
+                    messageError: ''
+                })
+            }
+
+    }
+
+
     render() {
         return (
             <div className={'container contact'}>
@@ -101,10 +175,10 @@ class Form extends Component{
                     <div className={'col-8'}>
                         <h2>Formularz kontaktowy</h2>
                         <form>
-                            <input name={'name'} placeholder={'Imię i nazwisko'} type={'text'}/>
-                            <input name={'mail'} placeholder={'Adres email'} type={'text'}/>
-                            <textarea placeholder={'Twoja wiadomość'} name={'message'}></textarea>
-                            <button>Wyślij</button>
+                            <input className={this.state.nameError}  placeholder={'Imię i nazwisko'} onChange={this.changeHandler} name={'nameValue'} value={this.state.nameValue} type={'text'}/>
+                            <input className={this.state.mailError}  name={'mail'} placeholder={'Adres email'} onChange={this.changeHandler} name={'mailValue'} value={this.state.mailValue} type={'text'}/>
+                            <textarea className={this.state.messageError}  placeholder={'Twoja wiadomość'} onChange={this.changeHandler} name={'messageValue'} value={this.state.messageValue} ></textarea>
+                            <button onClick={this.clickHandler}>Wyślij</button>
                         </form>
                     </div>
                     <div className={'col-4 '}>

@@ -27,14 +27,14 @@ const SliderElements = [
     },
     {   imageName: 'professionalCleaning.jpg',
         name: 'professionalCleaning',
-        plName: 'Profesjonalne sprżątanie'
+        plName: 'Profesjonalne sprzątanie'
     },
 ];
 
 class GalleryElement extends Component{
 
     render() {
-            return(<div className={'galleryElement col-sm'}> <NavLink to={'/shop/'+this.props.name}>
+            return(<div className={'galleryElement col-sm-3'}> <NavLink to={'/shop/'+this.props.name}>
                <img  src={`./images/${this.props.image}`} alt={this.props.name}/>
                 <p>{this.props.plName}</p></NavLink>
             </div>);
