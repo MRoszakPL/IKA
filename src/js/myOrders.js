@@ -22,7 +22,7 @@ class Head extends Component{
 
 }
 
-class Order extends Component{
+class OrderListElement extends Component{
 
 
     constructor(props) {
@@ -73,13 +73,13 @@ class Order extends Component{
                     <li>
                         <p className={'col-2'}>{'Nr pozycji'}</p>
                         <p className={'col-3'}>{'Nazwa produktu'}</p>
-                        <p className={'col-2'}>{'Liczna sztuk'}</p>
+                        <p className={'col-2'}>{'Liczba sztuk'}</p>
                         <p className={'col-2'}>{'Cena jednostkowa'}</p>
                         <p className={'col-2'}>{'Cena'}</p>
                     </li>
                     {list}
                     <li>
-                        <p className={'col-2'}>Sumagit</p>
+                        <p className={'col-2'}>Suma</p>
                         <p className={'col-3'}></p>
                         <p className={'col-2'}></p>
                         <p className={'col-2'}></p>
@@ -92,13 +92,12 @@ class Order extends Component{
 
 }
 
-
 class OrdersList extends Component{
 
     render() {
         console.log(this.props.items);
         let list = this.props.items.map((element, index)=>{
-            return <Order key={index} number={index} item={element} />
+            return <OrderListElement key={index} number={index} item={element} />
         })
         return (
             <ul>
@@ -122,7 +121,7 @@ class Orders extends Component{
 
     componentDidMount() {
 
-        fetch(`http://localhost:3001/order/`, {
+        fetch(`http://localhost:3002/order/`, {
             method: 'GET', // or 'PUT'
         }).then( resp => {
             if (resp.ok)

@@ -21,7 +21,7 @@ class Basket extends Component{
         let login = downloadData('login');
         let password = downloadData('password');
         if(this.state.recived !== 1){
-            fetch(`http://localhost:3001/users?login=${login}&password=${password}`,{
+            fetch(`http://localhost:3002/users?login=${login}&password=${password}`,{
                 method: 'GET',
             }).then( resp => {
                 if (resp.ok)
@@ -39,6 +39,11 @@ class Basket extends Component{
                 console.log('Błąd!', err);
             });
         }
+    }
+
+
+    nav = () =>{
+        this.props.history.push('/myOrders');
     }
 
     render() {
@@ -59,7 +64,7 @@ class Basket extends Component{
                         <li>E-mail: {this.state.info[0].email}</li>
                         <li>Typ użytkownika: {this.state.info[0].level ? 'Klient' : 'Administrator'}</li>
                     </ul>
-                    <button onClick={this.props.history.push('/myOrders')}>Zamówienia</button>
+                    <button onClick={this.nav}>Zamówienia</button>
 
                     <button>Edytuj dane</button>
                     <button>Zmień hasło</button>

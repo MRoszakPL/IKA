@@ -13,8 +13,7 @@ function downloadData(name) {
     return JSON.parse( (localStorage.getItem(name)) ? localStorage.getItem(name) : 0 );
 }
 
-function setLanguage(value) {
-
+function translateMainCategory(value) {
 
     switch(value){
         case 'master':
@@ -39,8 +38,6 @@ function setLanguage(value) {
             return  'Profesjonalne sprzątanie';
     }
 
-
-
 }
 
 
@@ -53,15 +50,10 @@ class MainCategories extends Component{
             isLoaded: false,
             numOfProducts: (downloadData('numberOfProducts')) ? downloadData('numberOfProducts') : 0,
             sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
-
         }
-
     }
 
-
     clickHandler = (name, price, count) => {
-        console.log(name);
-        console.log(price);
 
         let numberOfProducts = downloadData('numberOfProducts');
         let nameOfProducts = downloadData('nameOfProducts');
@@ -107,7 +99,7 @@ class MainCategories extends Component{
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3001/products?type=${this.props.match.params.mainTheme}`,{
+        fetch(`http://localhost:3002/products?type=${this.props.match.params.mainTheme}`,{
             method: 'GET',
         }).then( resp => {
             if (resp.ok)
@@ -137,7 +129,7 @@ class MainCategories extends Component{
                     <SearchBar numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                     <ShopMenu/>
                     <h1>
-                        {setLanguage(this.props.match.params.mainTheme)}
+                        {translateMainCategory(this.props.match.params.mainTheme)}
                     </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>

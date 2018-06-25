@@ -9,7 +9,7 @@ import {
 import './sass/main.css'
 
 import NavBar from './js/navigation';
-import Main from './js/main';
+import MainPage from './js/mainPage';
 import Blog from './js/blogPage';
 import Shop from './js/shop';
 import Contact from './js/contact';
@@ -31,7 +31,7 @@ class App extends Component {
             <main>
                 <NavBar/>
                 <Switch>
-                    <Route exact path='/' component={Main}/>
+                    <Route exact path='/' component={MainPage}/>
                     <Route path='/blog' component={Blog}/>
                     <Route exact path='/shop' component={Shop}/>
                     <Route exact path='/shop/:mainTheme' component={MainCategories}/>

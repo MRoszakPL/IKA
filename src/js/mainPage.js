@@ -17,6 +17,10 @@ const SliderElements = [
         name: 'package',
         plName: 'Opakowania'
     },
+    {   imageName: 'reklamowki.jpg',
+        name: 'bags',
+        plName: 'Reklamówki'
+    },
     {   imageName: 'artykulyhigieniczne.jpg',
         name: 'hygienicArticles',
         plName: 'Artykuły higieniczne'
@@ -28,16 +32,16 @@ const SliderElements = [
     {   imageName: 'professionalCleaning.jpg',
         name: 'professionalCleaning',
         plName: 'Profesjonalne sprzątanie'
-    },
+    }
 ];
 
 class GalleryElement extends Component{
 
     render() {
-            return(<div className={'galleryElement col-sm-3'}> <NavLink to={'/shop/'+this.props.name}>
+            return(<NavLink  className={'galleryElement col-md-3'} to={'/shop/'+this.props.name}>
                <img  src={`./images/${this.props.image}`} alt={this.props.name}/>
-                <p>{this.props.plName}</p></NavLink>
-            </div>);
+                <p>{this.props.plName}</p>
+           </NavLink>);
     };
 }
 
@@ -69,54 +73,17 @@ class ImageJumbotron extends Component{
     }
 }
 
-// class Info extends Component{
-//
-//     render() {
-//         return (
-//             <div className={'blog row'}>
-//                 <h2>Aktualności... <span>co u nas słychać</span></h2>
-//
-//                     <NavLink to={'/blog/1'}>
-//                             <div className={'col-md'}>
-//                             <p className={'theme'}>Temat</p>
-//                             <p className={'date'}>dodano 15.11.2018</p>
-//                             <p className={'message'}>
-//                                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at deserunt enim incidunt odio!
-//                                     Beatae doloribus eligendi eum eveniet, hic impedit maiores maxime, odit, omnis optio quis repellat repellendus temporibus.</span>
-//                             </p>
-//                          </div>
-//                     </NavLink>
-//
-//
-//                     <NavLink to={'/blog/2'}>
-//                         <div className={'col-md'}>
-//                             <p className={'theme'}>Temat</p>
-//                             <p className={'date'}>dodano 15.11.2018</p>
-//                             <p className={'message'}>
-//                                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at deserunt enim incidunt odio!
-//                                     Beatae doloribus eligendi eum eveniet, hic impedit maiores maxime, odit, omnis optio quis repellat repellendus temporibus.</span>
-//                             </p>
-//                         </div>
-//                     </NavLink>
-//
-//             </div>
-//         );
-//     }
-//
-// }
-
-class Main extends Component{
+class MainPage extends Component{
 
     render() {
         return (
             <div className={'mainContent'}>
                 <ImageJumbotron/>
                 <Gallery/>
-                {/*<Info/>*/}
             </div>
         );
     }
 
 }
 
-export default Main;
+export default MainPage;

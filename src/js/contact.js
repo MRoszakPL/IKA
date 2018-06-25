@@ -76,7 +76,6 @@ class ListElement extends Component{
 
 }
 
-
 class List extends Component{
 
     render() {
@@ -172,16 +171,16 @@ class Form extends Component{
         return (
             <div className={'container contact'}>
                 <div className={'row'}>
-                    <div className={'col-8'}>
+                    <div className={'col-md-8'}>
                         <h2>Formularz kontaktowy</h2>
                         <form>
                             <input className={this.state.nameError}  placeholder={'Imię i nazwisko'} onChange={this.changeHandler} name={'nameValue'} value={this.state.nameValue} type={'text'}/>
-                            <input className={this.state.mailError}  name={'mail'} placeholder={'Adres email'} onChange={this.changeHandler} name={'mailValue'} value={this.state.mailValue} type={'text'}/>
+                            <input className={this.state.mailError}  placeholder={'Adres email'} onChange={this.changeHandler} name={'mailValue'} value={this.state.mailValue} type={'text'}/>
                             <textarea className={this.state.messageError}  placeholder={'Twoja wiadomość'} onChange={this.changeHandler} name={'messageValue'} value={this.state.messageValue} ></textarea>
                             <button onClick={this.clickHandler}>Wyślij</button>
                         </form>
                     </div>
-                    <div className={'col-4 '}>
+                    <div className={'col-md-4 '}>
                         <h2>Kontakt</h2>
                         <h4>Główny kontakt</h4>
                         <p className={'number'}>61 653 10 80</p>

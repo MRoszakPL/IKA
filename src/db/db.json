@@ -36,7 +36,7 @@
       "price": "5.29",
       "src": "mopzmikrofibry.jpg",
       "type": "master",
-      "category": "mops"
+      "category": "masterMops"
     },
     {
       "name": "Worki na śmieci",
@@ -160,6 +160,36 @@
       "sum": 44.45,
       "pay": false,
       "id": 9
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes"
+      ],
+      "numberOfProducts": 5,
+      "numbers": [
+        5
+      ],
+      "prices": [
+        3.3
+      ],
+      "sum": 16.5,
+      "pay": false,
+      "id": 10
+    },
+    {
+      "name": [
+        "Mop z mikrofibry"
+      ],
+      "numberOfProducts": 4,
+      "numbers": [
+        4
+      ],
+      "prices": [
+        5.29
+      ],
+      "sum": 21.16,
+      "pay": false,
+      "id": 11
     }
   ]
 }

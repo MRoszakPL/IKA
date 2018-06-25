@@ -191,6 +191,12 @@ nav {
   background-color: #37a6df;
   font-size: 1.5rem;
   opacity: 0.8; }
+  nav.navbar-expand .container {
+    flex-wrap: wrap; }
+  nav .navbar-nav {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
   nav.navbar-light .navbar-nav .nav-link {
     color: white;
     font-weight: bold;
@@ -405,11 +411,12 @@ nav {
   justify-content: center;
   background-color: #37a6df;
   width: 100%;
-  height: 4rem;
+  min-height: 4rem;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  text-align: center; }
 
 .Categories ul.listOfProducts {
   display: flex;
@@ -475,7 +482,7 @@ nav {
   justify-content: center;
   background-color: #37a6df;
   width: 100%;
-  height: 4rem;
+  min-height: 4rem;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
@@ -558,7 +565,10 @@ nav {
     .basket .navButtons button {
       background-color: #37a6df;
       margin-left: 1rem;
-      margin-right: 1rem; }
+      margin-right: 1rem;
+      margin-bottom: 1rem; }
+  .basket .empty {
+    align-self: center; }
 
 .orders {
   display: flex;
@@ -686,7 +696,7 @@ a {
 
 .galleryElement {
   display: flex;
-  min-height: 10rem;
+  min-height: 15rem;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;

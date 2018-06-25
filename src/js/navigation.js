@@ -51,7 +51,7 @@ class NavBar extends Component{
                             <NavLink className="nav-link" to="/contact">Kontakt</NavLink>
                         </li>
                         {this.downloadData('login') ? <li className="nav-item">
-                            <NavLink className="nav-link" to="/myaccount">Moje konto</NavLink>
+                            <NavLink className="nav-link" to="/myAccount">Moje konto</NavLink>
                         </li> : ''}
                         <li className="nav-item">
                             {this.downloadData('logged') ? <NavLink className="nav-link" to="/unsing" onClick={this.unsign}>Wyloguj konto</NavLink>  : <NavLink className="nav-link" to="/login">Zaloguj się</NavLink>}

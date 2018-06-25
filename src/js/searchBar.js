@@ -20,8 +20,8 @@ class Basket extends Component{
 
         return (
             <div className={'col-md basket'}>
-                <p>{this.props.numberOfProducts>0 ? 'Liczba produktów: '+this.props.numberOfProducts : 'Pusto'}</p>
-                <p>Koszt {this.props.sum}</p>
+                <p>{this.props.numberOfProducts>0 || this.props.numberOfProducts != null ? 'Liczba produktów: '+this.props.numberOfProducts : 'Pusto'}</p>
+                <p>Koszt {this.props.sum>0 || this.props.sum != null ? this.props.sum : '0.00'} </p>
                 <Button />
             </div>
         );

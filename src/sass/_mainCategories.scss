@@ -6,11 +6,12 @@
     justify-content: center;
     background-color: #37a6df;
     width: 100%;
-    height: 4rem;
+    min-height: 4rem;
     font-weight: bold;
     text-transform: uppercase;
     color: white;
     margin-top: 1rem;
+    text-align: center;
   }
   ul.listOfProducts{
     display: flex;

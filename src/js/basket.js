@@ -160,13 +160,13 @@ class List extends Component{
         let counter = count.splice(index, 1);
         nameOfProducts.splice(index, 1);
         sum = sum - (counter * prices.splice(index, 1));
-        console.log(sum);
-        console.log(counter);
+
         sendData('nameOfProducts', nameOfProducts);
         sendData('numberOfProducts', numberOfProducts- counter);
         sendData('numbers', count);
         sendData('prices', prices);
         sendData('sum', (Math.round(Number(sum) * 100) / 100));
+
         this.setState({
             numberOfProducts: numberOfProducts-counter,
             nameOfProducts: nameOfProducts,
@@ -233,17 +233,23 @@ class List extends Component{
     }
     render() {
         let list = [];
-        for(let i = 0; i<this.state.numbers.length; i++){
-            list.push(<ListElement clickFnc={this.clickHandler} deleteFnc={this.deleteElement} key={this.state.nameOfProducts[i]} id={i} name={this.state.nameOfProducts[i]} number={this.state.numbers[i]} prices={this.state.prices[i]}/>)
+        if(this.state.numbers != null){
+            for(let i = 0; i<this.state.numbers.length; i++){
+                list.push(<ListElement clickFnc={this.clickHandler} deleteFnc={this.deleteElement} key={this.state.nameOfProducts[i]} id={i} name={this.state.nameOfProducts[i]} number={this.state.numbers[i]} prices={this.state.prices[i]}/>)
+            }
+        } else {
+            list.push(<h1 className={'empty'} key={'Empty'}>Koszyk jest pusty</h1>);
         }
+
+
         return (
             <div>
                 <ul>
                     <FirstListElement/>
                     {list}
-                    <LastElement price={this.state.sum}/>
+                  <LastElement price={this.state.sum}/>
                 </ul>
-                <Buttons paymentFnc={this.payment}/>
+               <Buttons paymentFnc={this.payment}/>
                 {this.redirect(this.state.pay)}
             </div>
         );

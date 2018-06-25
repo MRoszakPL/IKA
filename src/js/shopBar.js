@@ -5,7 +5,7 @@ const items =[
     {
         mainTheme: 'Master',
         name: ['Folia aluminiowa', 'Gastronomia', 'Mopy i zestawy kąpielowe', 'Papiery', 'Rękawice',  'Sznury i linki do prania'],
-        value: ['folia', 'gastronomy', 'mops', 'papers', 'gloves', 'ropes']
+        value: ['folia', 'gastronomy', 'masterMops', 'papers', 'gloves', 'ropes']
     },{
         mainTheme: 'Morana',
         name: ['Ścierki', 'Mopy', 'Druciaki', 'Zmywaki'],

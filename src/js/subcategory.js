@@ -4,7 +4,7 @@ import ShopMenu from "./shopBar";
 import ListOfProducts from "./listOfProducts"
 
 
-//Send data with set name and conten//t
+//Send data with set name and content
 function sendData(name, content) {
     localStorage.setItem(name, JSON.stringify( content ) );
 }
@@ -14,7 +14,7 @@ function downloadData(name) {
     return JSON.parse(localStorage.getItem(name));
 }
 
-function setLanguage(value) {
+function translateMainCategory(value) {
 
     switch(value){
         case 'master':
@@ -38,10 +38,50 @@ function setLanguage(value) {
         case 'professionalCleaning':
             return  'Profesjonalne sprzątanie';
     }
+}
 
 
+function translateSubCategory(value) {
+
+    switch(value){
+        case 'folia':
+            return 'Folia aluminiowa';
+        case 'gastronomy':
+            return "Gastronomia";
+        case 'masterMops':
+            return "Mopy i zestawy kąpielowe";
+        case 'papers':
+            return "Papiery";
+        case 'gloves':
+            return "Rękawice";
+        case 'ropes':
+            return "Sznury i linki do prania";
+        case 'wiper':
+            return "Ścierki";
+        case 'mops':
+            return "Mopy";
+        case 'scourer':
+            return "Druciaki";
+        case 'dishrag':
+            return "Zmywaki";
+        case 'forGastronomy':
+            return "Dla gastronomii";
+        case 'forPackages':
+            return "Taśmy pakowe";
+        case 'forHome':
+            return "Gospodarcze";
+        case 'forHospital':
+            return "Diagnostyczne";
+        case 'oneUse':
+            return "Jednorazowe";
+        case 'forWork':
+            return "Robocze";
+        default:
+            return value;
+    }
 
 }
+
 
 class SubCategory extends Component{
 
@@ -52,16 +92,15 @@ class SubCategory extends Component{
             isLoaded: false,
             numOfProducts: (downloadData('numberOfProducts')) ? downloadData('numberOfProducts') : 0,
             sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
-            name : this.props.match.params.product,
-            main: setLanguage(this.props.match.params.mainTheme)
+            name : translateSubCategory(this.props.match.params.product),
+            main: translateMainCategory(this.props.match.params.mainTheme)
         }
 
     }
 
 
     clickHandler = (name, price, count) => {
-        console.log(name);
-        console.log(price);
+
 
         let numberOfProducts = downloadData('numberOfProducts');
         let nameOfProducts = downloadData('nameOfProducts');
@@ -107,10 +146,9 @@ class SubCategory extends Component{
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.product);
-        console.log(this.props.match.params.mainTheme);
 
-        fetch(`http://localhost:3001/products?type=${this.props.match.params.mainTheme}&category=${this.props.match.params.product}`,{
+
+        fetch(`http://localhost:3002/products?type=${this.props.match.params.mainTheme}&category=${this.props.match.params.product}`,{
             method: 'GET',
         }).then( resp => {
             if (resp.ok)
@@ -118,7 +156,6 @@ class SubCategory extends Component{
             else
                 throw new Error('Błąd sieci!');
         }).then( resp => {
-            console.log(resp);
             if(resp !== '[]'){
                 this.setState({
                     products: resp,
@@ -132,9 +169,7 @@ class SubCategory extends Component{
 
     changeSiteHandler = (mainCategory, subcategory, name, main) =>{
 
-        console.log(mainCategory);
-        console.log(subcategory);
-        fetch(`http://localhost:3001/products?type=${mainCategory}&category=${subcategory}`,{
+        fetch(`http://localhost:3002/products?type=${mainCategory}&category=${subcategory}`,{
             method: 'GET',
         }).then( resp => {
             if (resp.ok)
@@ -142,10 +177,9 @@ class SubCategory extends Component{
             else
                 throw new Error('Błąd sieci!');
         }).then( resp => {
-            console.log(resp);
+
             if(resp !== '[]'){
 
-                console.log(this.state.isLoaded)
                 this.setState({
                     products: resp,
                     isLoaded: true,
