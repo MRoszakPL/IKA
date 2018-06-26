@@ -45,8 +45,13 @@ class SearchBar extends Component {
     }
 
 
-    clickHandler = () => {
+    clickHandler = (e) => {
+
         this.props.clickFnc(this.state.searchValue);
+    }
+
+    pressedKey = (e) => {
+        (e.charCode === 13) && this.props.clickFnc(this.state.searchValue);
     }
 
     render() {
@@ -55,7 +60,7 @@ class SearchBar extends Component {
                 <div className={'container searchbar'}>
                     <img className={'col-md'} alt={'logo'} src={logo}/>
                     <div className={'col-md search'}>
-                        <input onChange={this.searchInputChangeHandler} placeholder={'Wyszukaj produkt'} type={'text'} value={this.state.searchValue}/>
+                        <input onChange={this.searchInputChangeHandler} placeholder={'Wyszukaj produkt'} type={'text'} value={this.state.searchValue}  onKeyPress={this.pressedKey}/>
                         <button onClick={this.clickHandler}>Szukaj</button>
                     </div>
                     <Basket numberOfProducts={this.props.numofproducts} sum={this.props.sum}/>
