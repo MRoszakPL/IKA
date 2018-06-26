@@ -153,8 +153,8 @@ class MainCategories extends Component{
     render() {
         console.log(this.state.numOfProducts)
         return  (
-            <div className={'container Categories'}>
-                <div className={'row'}>
+            <div className={'container shop'}>
+                <div className={'container'}>
                     <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                     <ShopMenu/>
                     <h1>

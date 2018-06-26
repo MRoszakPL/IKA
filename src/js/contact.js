@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 const { compose } = require("recompose");
-const { withScriptjs, withGoogleMap, GoogleMap,Marker} = require("react-google-maps");
+const { withScriptjs, withGoogleMap, GoogleMap,Marker, InfoWindow} = require("react-google-maps");
 
 const listOfContacts = [
     {
@@ -51,9 +51,28 @@ const MapWithAMarker = compose(withScriptjs, withGoogleMap)(props =>
         defaultZoom={6}
         defaultCenter={{ lat: 51.9202186, lng: 18.502256 }}
     >
-        <Marker
-            position={{ lat: -34.397, lng: 150.644 }}
+        <Marker //Poznań
+            position={{ lat: 52.3685212, lng: 16.9359031 }}
+            title = {'Centrala Poznań'}
         />
+        <Marker //Szczecin
+            position={{ lat: 53.4396986, lng: 14.4057631 }}
+            title = {'Oddział Szczecin'}
+        />
+        <Marker //Kraków
+            position={{ lat: 50.0302794, lng: 20.036916 }}
+            title = {'Oddział Kraków'}
+        />
+        <Marker //Złotów
+            position={{ lat: 53.3502152, lng: 17.049427 }}
+            title = {'Oddział Złotów'}
+        />
+        <Marker //Żagań
+            position={{ lat: 51.6140615, lng: 15.2957965 }}
+            title = {'Oddział Żagań'}
+        />
+
+
     </GoogleMap>
 );
 
@@ -102,7 +121,8 @@ class Form extends Component{
             messageValue: '',
             nameError: '',
             mailError: '',
-            messageError: ''
+            messageError: '',
+            messageSend: ''
         };
     }
 
@@ -121,7 +141,8 @@ class Form extends Component{
             if(this.state.nameValue.length === 0){
                 everythingIsOk = false;
                 this.setState({
-                    nameError: 'error'
+                    nameError: 'error',
+                    messageSend: ''
                 })
             }
             else {
@@ -132,7 +153,8 @@ class Form extends Component{
             if(this.state.mailValue.length === 0 || this.state.mailValue.indexOf('@')<0){
                 everythingIsOk = false;
                 this.setState({
-                    mailError: 'error'
+                    mailError: 'error',
+                    messageSend: ''
                 })
 
             } else {
@@ -144,7 +166,8 @@ class Form extends Component{
             if(this.state.messageValue.length === 0){
                 everythingIsOk = false;
                 this.setState({
-                    messageError: 'error'
+                    messageError: 'error',
+                    messageSend: ''
                 })
             } else {
                 this.setState({
@@ -153,14 +176,15 @@ class Form extends Component{
             }
 
             if(everythingIsOk){
-                alert('Przesłano wiadomość');
+
                 this.setState ({
                     nameValue: '',
                     mailValue: '',
                     messageValue: '',
                     nameError: '',
                     mailError: '',
-                    messageError: ''
+                    messageError: '',
+                    messageSend: 'Przesłano wiadomość'
                 })
             }
 
@@ -178,6 +202,7 @@ class Form extends Component{
                             <input className={this.state.mailError}  placeholder={'Adres email'} onChange={this.changeHandler} name={'mailValue'} value={this.state.mailValue} type={'text'}/>
                             <textarea className={this.state.messageError}  placeholder={'Twoja wiadomość'} onChange={this.changeHandler} name={'messageValue'} value={this.state.messageValue} ></textarea>
                             <button onClick={this.clickHandler}>Wyślij</button>
+                            <p>   {this.state.messageSend}</p>
                         </form>
                     </div>
                     <div className={'col-md-4 '}>
@@ -197,7 +222,7 @@ class Form extends Component{
                             <h2>Oddziały</h2>
 
                             <MapWithAMarker
-                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3eGV_MjjhtW1EvnFhlJe9qQISE4RUAeE&v=3.exp&libraries=geometry,drawing,places"
                                 loadingElement={<div style={{ height: `100%` }} />}
                                 containerElement={<div style={{ height: `30rem` }} />}
                                 mapElement={<div style={{ height: `30rem` }} />}

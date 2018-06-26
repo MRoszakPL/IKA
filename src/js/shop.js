@@ -174,18 +174,13 @@ class Shop extends Component{
 
         console.log(this.state.products.length)
         return (
-            <div className={'shopPage'}>
+            <div className={'shop'}>
                 <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                 <ShopMenu />
-
-                <h1>
-                    {this.state.searched && `Wynik wyszukania dla ${this.state.searchValue}` }
-                </h1>
-
-                {
-                    (this.state.isLoaded && this.state.searched) ? (this.state.products.length === 0) ? <h2>Brak wyników</h2> : <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> : <NewProducts items={newProducts}/>
-                }
-
+                <div className={'container'}>
+                    {this.state.searched && <h1>Wynik wyszukania dla: {this.state.searchValue} </h1> }
+                    {(this.state.isLoaded && this.state.searched) ? (this.state.products.length === 0) ? <h2>Brak wyników</h2> : <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> : <NewProducts items={newProducts}/>}
+                </div>
             </div>
         );
     }

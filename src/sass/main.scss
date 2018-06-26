@@ -1,11 +1,9 @@
 @import './_footer.scss';
 @import './_contact.scss';
 @import './_login.scss';
-@import './_navbar.scss';
+@import './_navigation.scss';
 @import './_shop.scss';
 @import './_myAccount.scss';
-@import './_mainCategories.scss';
-@import './_subcategory.scss';
 @import './_basket.scss';
 @import './_myOrders.scss';
 
@@ -195,6 +193,9 @@ a {
     border-radius: 1rem;
   }
 }
+
+
+
 
 button{
   background-color: inherit;

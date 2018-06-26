@@ -228,7 +228,7 @@ class SubCategory extends Component{
 
     render() {
         return (
-            <div className={'container Categories'}>
+            <div className={'container shop'}>
                 <div className={'row'}>
                 <SearchBar clickFnc={this.searchButtonHandler} numofproducts={downloadData('numberOfProducts')} sum={downloadData('sum')} />
                 <ShopMenu clickFnc={this.changeSiteHandler}/>
