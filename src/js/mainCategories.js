@@ -119,17 +119,46 @@ class MainCategories extends Component{
         });
     }
 
-  x
+    searchButtonHandler = (value) => {
+
+        fetch(`http://localhost:3002/products`,{
+            method: 'GET',
+        }).then( resp => {
+            if (resp.ok)
+                return resp.json();
+            else
+                throw new Error('Błąd sieci!');
+        }).then( resp => {
+            if(resp !== '[]'){
+                let result = [];
+                for(var item of resp){
+                    if(item.name.toUpperCase().includes(value.toUpperCase())) {
+                        result.push(item);
+                    }
+                }
+                this.setState({
+                    products: result,
+                    isLoaded: true,
+                    searched: true,
+                    searchValue: value
+                })
+            }
+
+        }).catch( err => {
+            console.log('Błąd!', err);
+        });
+
+    }
 
     render() {
         console.log(this.state.numOfProducts)
         return  (
             <div className={'container Categories'}>
                 <div className={'row'}>
-                    <SearchBar numofproducts={this.state.numOfProducts} sum={this.state.sum} />
+                    <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                     <ShopMenu/>
                     <h1>
-                        {translateMainCategory(this.props.match.params.mainTheme)}
+                        {this.state.searched ? `Wynik wyszukania dla ${this.state.searchValue}` : translateMainCategory(this.props.match.params.mainTheme)}
                     </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>

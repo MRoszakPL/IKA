@@ -30,14 +30,33 @@ class Basket extends Component{
 
 class SearchBar extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            searchValue: ''
+        }
+    }
+
+
+    searchInputChangeHandler = (e) => {
+        this.setState({
+            searchValue: e.currentTarget.value
+        })
+    }
+
+
+    clickHandler = () => {
+        this.props.clickFnc(this.state.searchValue);
+    }
+
     render() {
         return (
             <div className={'row'}>
                 <div className={'container searchbar'}>
                     <img className={'col-md'} alt={'logo'} src={logo}/>
                     <div className={'col-md search'}>
-                        <input placeholder={'Wyszukaj produkt'} type={'text'}/>
-                        <button>Szukaj</button>
+                        <input onChange={this.searchInputChangeHandler} placeholder={'Wyszukaj produkt'} type={'text'} value={this.state.searchValue}/>
+                        <button onClick={this.clickHandler}>Szukaj</button>
                     </div>
                     <Basket numberOfProducts={this.props.numofproducts} sum={this.props.sum}/>
                 </div>

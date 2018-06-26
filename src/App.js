@@ -13,7 +13,7 @@ import MainPage from './js/mainPage';
 import Blog from './js/blogPage';
 import Shop from './js/shop';
 import Contact from './js/contact';
-import LogIn from './js/login';
+import LoginPage from './js/loginPage';
 import Basket from "./js/basket";
 import NoMatch from './js/nomatch';
 import Footer from "./js/footer";
@@ -36,7 +36,7 @@ class App extends Component {
                     <Route exact path='/shop' component={Shop}/>
                     <Route exact path='/shop/:mainTheme' component={MainCategories}/>
                     <Route path='/contact' component={Contact}/>
-                    <Route path='/login' component={LogIn}/>
+                    <Route path='/login' component={LoginPage}/>
                     <Route path='/basket' component={Basket}/>
                     <Route path='/myAccount' component={MyAccount}/>
                     <Route path='/shop/:mainTheme/:product' component={SubCategory}/>

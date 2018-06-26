@@ -15,7 +15,7 @@ function downloadData(name) {
     return JSON.parse( localStorage.getItem(name) );
 }
 
-class LogIn extends Component{
+class LoginPage extends Component{
 
     constructor(props) {
         super(props);
@@ -37,7 +37,7 @@ class LogIn extends Component{
     signIn = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:3001/users?login=${this.state.loginValue}&password=${this.state.passwordValue}`,{
+        fetch(`http://localhost:3002/users?login=${this.state.loginValue}&password=${this.state.passwordValue}`,{
             method: 'GET',
         }).then( resp => {
             if (resp.ok)
@@ -93,4 +93,4 @@ class LogIn extends Component{
 
 };
 
-export default LogIn;
+export default LoginPage;

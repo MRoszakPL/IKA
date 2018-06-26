@@ -197,7 +197,7 @@ class List extends Component{
             pay: false
         }
 
-        fetch(`http://localhost:3001/order`, {
+        fetch(`http://localhost:3002/order`, {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers:{'Content-Type': 'application/json'}
@@ -233,12 +233,13 @@ class List extends Component{
     }
     render() {
         let list = [];
-        if(this.state.numbers != null){
+        console.log(this.state.numbers.length)
+        if(this.state.numbers === null || this.state.numbers.length === 0){
+            list.push(<h1 className={'empty'} key={'Empty'}>Koszyk jest pusty</h1>);
+        } else {
             for(let i = 0; i<this.state.numbers.length; i++){
                 list.push(<ListElement clickFnc={this.clickHandler} deleteFnc={this.deleteElement} key={this.state.nameOfProducts[i]} id={i} name={this.state.nameOfProducts[i]} number={this.state.numbers[i]} prices={this.state.prices[i]}/>)
             }
-        } else {
-            list.push(<h1 className={'empty'} key={'Empty'}>Koszyk jest pusty</h1>);
         }
 
 
@@ -247,9 +248,9 @@ class List extends Component{
                 <ul>
                     <FirstListElement/>
                     {list}
-                  <LastElement price={this.state.sum}/>
+                    {(this.state.numbers === null || this.state.numbers.length === 0) ? null : <LastElement price={this.state.sum}/>}
                 </ul>
-               <Buttons paymentFnc={this.payment}/>
+                {(downloadData('logged')) ? (this.state.numbers === null || this.state.numbers.length === 0) ? <BackButton/> : <Buttons paymentFnc={this.payment}/> : <div> <h2>Zaloguj się</h2> <BackButton/></div>}
                 {this.redirect(this.state.pay)}
             </div>
         );

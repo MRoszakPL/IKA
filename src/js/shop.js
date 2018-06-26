@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import ShopMenu from './shopBar.js';
 import SearchBar from './searchBar.js';
+import ListOfProducts from "./listOfProducts"
 
 //Download data with set name
 function downloadData(name) {
@@ -112,29 +113,78 @@ class Shop extends Component{
 
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             numOfProducts: (downloadData('numberOfProducts')>0) ? downloadData('numberOfProducts') : 'Pusto',
-            sum: (downloadData('sum')) ? downloadData('sum') : '0.00'
+            sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
+            products: [],
+            isLoaded: false,
+            searched: false,
+            searchValue: ''
         }
     }
 
 
     componentDidMount() {
-        this.setState ={
-            numOfProducts: (downloadData('numberOfProducts')>0) ? downloadData('numberOfProducts') : 'Pusto',
+        this.setState ({
+            numOfProducts: (downloadData('numberOfProducts') > 0) ? downloadData('numberOfProducts') : 'Pusto',
             sum: (downloadData('sum')) ? downloadData('sum') : '0.00'
+        })
+    }
+
+    searchButtonHandler = (value) => {
+
+        if(value !== ''){
+            fetch(`http://localhost:3002/products`,{
+                method: 'GET',
+            }).then( resp => {
+                if (resp.ok)
+                    return resp.json();
+                else
+                    throw new Error('Błąd sieci!');
+            }).then( resp => {
+                if(resp !== '[]'){
+                    let result = [];
+                    for(var item of resp){
+                        if(item.name.toUpperCase().includes(value.toUpperCase())) {
+                            result.push(item);
+                        }
+                    }
+                    this.setState({
+                        products: result,
+                        isLoaded: true,
+                        searched: true,
+                        searchValue: value
+                    })
+                } else {
+                    this.setState({
+                        products: [],
+                        isLoaded: true,
+                        searched: true,
+                        searchValue: value
+                    })
+                }
+
+            }).catch( err => {
+                console.log('Błąd!', err);
+            });
         }
     }
 
-
     render() {
 
-
+        console.log(this.state.products.length)
         return (
             <div className={'shopPage'}>
-                <SearchBar numofproducts={this.state.numOfProducts} sum={this.state.sum} />
+                <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                 <ShopMenu />
-                <NewProducts items={newProducts}/>
+
+                <h1>
+                    {this.state.searched && `Wynik wyszukania dla ${this.state.searchValue}` }
+                </h1>
+
+                {
+                    (this.state.isLoaded && this.state.searched) ? (this.state.products.length === 0) ? <h2>Brak wyników</h2> : <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> : <NewProducts items={newProducts}/>
+                }
 
             </div>
         );

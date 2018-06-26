@@ -93,7 +93,9 @@ class SubCategory extends Component{
             numOfProducts: (downloadData('numberOfProducts')) ? downloadData('numberOfProducts') : 0,
             sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
             name : translateSubCategory(this.props.match.params.product),
-            main: translateMainCategory(this.props.match.params.mainTheme)
+            main: translateMainCategory(this.props.match.params.mainTheme),
+            searched: false,
+            searchValue: ''
         }
 
     }
@@ -147,7 +149,6 @@ class SubCategory extends Component{
 
     componentDidMount() {
 
-
         fetch(`http://localhost:3002/products?type=${this.props.match.params.mainTheme}&category=${this.props.match.params.product}`,{
             method: 'GET',
         }).then( resp => {
@@ -159,7 +160,8 @@ class SubCategory extends Component{
             if(resp !== '[]'){
                 this.setState({
                     products: resp,
-                    isLoaded: true
+                    isLoaded: true,
+                    searched: false
                 })
             }
         }).catch( err => {
@@ -184,7 +186,8 @@ class SubCategory extends Component{
                     products: resp,
                     isLoaded: true,
                     name: name,
-                    main: main
+                    main: main,
+                    searched: false
                 })
             }
         }).catch( err => {
@@ -192,15 +195,45 @@ class SubCategory extends Component{
         });
     }
 
+    searchButtonHandler = (value) => {
+
+        fetch(`http://localhost:3002/products`,{
+            method: 'GET',
+        }).then( resp => {
+            if (resp.ok)
+                return resp.json();
+            else
+                throw new Error('Błąd sieci!');
+        }).then( resp => {
+            if(resp !== '[]'){
+                let result = [];
+                for(var item of resp){
+                    if(item.name.toUpperCase().includes(value.toUpperCase())) {
+                        result.push(item);
+                    }
+                }
+                this.setState({
+                    products: result,
+                    isLoaded: true,
+                    searched: true,
+                    searchValue: value
+                })
+            }
+
+        }).catch( err => {
+            console.log('Błąd!', err);
+        });
+
+    }
 
     render() {
         return (
             <div className={'container Categories'}>
                 <div className={'row'}>
-                <SearchBar  numofproducts={downloadData('numberOfProducts')} sum={downloadData('sum')} />
+                <SearchBar clickFnc={this.searchButtonHandler} numofproducts={downloadData('numberOfProducts')} sum={downloadData('sum')} />
                 <ShopMenu clickFnc={this.changeSiteHandler}/>
                 <h1>
-                    {this.state.main} - {this.state.name}
+                    {this.state.searched ? `Wynik wyszukania dla ${this.state.searchValue}` : `${this.state.main} - ${this.state.name}`}
                 </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>
@@ -209,7 +242,5 @@ class SubCategory extends Component{
     }
 
 }
-
-
 
 export default SubCategory;
