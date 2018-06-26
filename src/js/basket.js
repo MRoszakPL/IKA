@@ -115,6 +115,33 @@ class ListElement extends Component{
 
     }
 
+    changeHandler = (e) => {
+
+
+        let numberOfProducts = downloadData('numberOfProducts');
+        let num = downloadData('numbers');
+
+        let number = Number(e.currentTarget.value);
+
+        console.log(number);
+        console.log(numberOfProducts);
+        if(typeof number === "number"){
+            console.log(num[e.currentTarget.id]);
+            this.props.clickFnc((number - num[e.currentTarget.id])*this.props.prices);
+            numberOfProducts += number - num[e.currentTarget.id];
+            num[e.currentTarget.id] = number;
+            console.log(numberOfProducts);
+
+            sendData('numberOfProducts', numberOfProducts);
+            sendData('numbers', num);
+
+        }
+
+        this.setState({
+            value: number
+        })
+    }
+
     deleteItem = (e) =>{
       this.props.deleteFnc(e);
     }
@@ -125,7 +152,7 @@ class ListElement extends Component{
             <li>
                 <div className={'row listElement'}>
                     <p className={'col-4'}>{name}</p>
-                    <p className={'col-2'}><button className={'operationMinus'} id = {this.props.id} onClick={this.clickHandler} name={'minus'}>-</button><input type={'text'} value={this.state.value}/><button  onClick={this.clickHandler} className={'operationAdd'} id = {this.props.id} name={'plus'}>+</button></p>
+                    <p className={'col-2'}><button className={'operationMinus'} id = {this.props.id} onClick={this.clickHandler} name={'minus'}>-</button><input id = {this.props.id} onChange={this.changeHandler} type={'text'} value={this.state.value}/><button  onClick={this.clickHandler} className={'operationAdd'} id = {this.props.id} name={'plus'}>+</button></p>
                     <p className={'col-2'}>{prices}</p>
                     <p className={'col-2'}>{(Math.round((this.state.value*prices) * 100) / 100)}</p>
                     <button id = {name} className={'col-1 deleteButton'} onClick={this.deleteItem}>Usuń</button>
