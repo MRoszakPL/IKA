@@ -16,6 +16,15 @@ I decide that for final project I can show how his website can look like.
 - SASS + Bootstrap 
 
 
+### Website look 
 
+![alt text](https://preview.ibb.co/mBS0Ko/ika_page.png)
 
+Shop page
+
+![alt text](https://preview.ibb.co/hqU85T/ika_shop_page.png)
+
+Login Page
+
+![alt text](https://preview.ibb.co/ieBueo/login_page.png)
 
