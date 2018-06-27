@@ -42,7 +42,7 @@ class ProductElement extends Component{
         return (
             <li className={'row productElement'}>
                 <div className={'col-md-8 productImage'}>
-                    <img src={'./images/'+this.props.product.src}/>
+                    <img alt={this.props.product.name} src={'./images/'+this.props.product.src}/>
                 </div>
                 <div className={'col-md-4 productText'}>
                     <h2>{this.props.product.name}</h2>
@@ -66,7 +66,7 @@ class ListOfProducts extends Component{
     render() {
 
         let list = this.props.products.map((element, index)=>{
-            return <ProductElement key = {index} clickFnc={this.props.clickFnc} key={element.name} product={element}/>
+            return <ProductElement  clickFnc={this.props.clickFnc} key={element.name} product={element}/>
         })
 
         return (

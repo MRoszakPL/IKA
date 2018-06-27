@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 const { compose } = require("recompose");
-const { withScriptjs, withGoogleMap, GoogleMap,Marker, InfoWindow} = require("react-google-maps");
+const { withScriptjs, withGoogleMap, GoogleMap,Marker} = require("react-google-maps");
 
 const listOfContacts = [
     {
