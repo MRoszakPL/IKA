@@ -40,8 +40,8 @@ class App extends Component {
                     <Route path='/basket' component={Basket}/>
                     <Route path='/myAccount' component={MyAccount}/>
                     <Route path='/shop/:mainTheme/:product' component={SubCategory}/>
-                    <Route path={'product/:id'} component={Product}/>
-                    <Route path={'/myOrders'} component={MyOrders}/>
+                    <Route path='/product/:id' component={Product}/>
+                    <Route path='/myOrders' component={MyOrders}/>
                     <Route component={NoMatch}/>
                 </Switch>
                 <Footer/>

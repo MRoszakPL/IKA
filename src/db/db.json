@@ -18,46 +18,58 @@
   ],
   "products": [
     {
+      "id": 1,
       "name": "Rękawice nitrylowe Aloes",
       "price": "3.30",
       "src": "nitryloweAloes.jpg",
       "type": "master",
-      "category": "gloves"
+      "category": "gloves",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam dolorum hic similique. Ab id iste maiores optio repellat vel vero? Debitis esse neque quaerat quo ratione temporibus ut, veritatis?"
     },
     {
+      "id": 2,
       "name": "Papier do pieczenia",
       "price": "4.09",
       "src": "papierdopieczenia.jpg",
       "type": "master",
-      "category": "paper"
+      "category": "paper",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam dolorum hic similique. Ab id iste maiores optio repellat vel vero? Debitis esse neque quaerat quo ratione temporibus ut, veritatis?"
     },
     {
+      "id": 3,
       "name": "Mop z mikrofibry",
       "price": "5.29",
       "src": "mopzmikrofibry.jpg",
       "type": "master",
-      "category": "masterMops"
+      "category": "masterMops",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam dolorum hic similique. Ab id iste maiores optio repellat vel vero? Debitis esse neque quaerat quo ratione temporibus ut, veritatis?"
     },
     {
+      "id": 4,
       "name": "Worki na śmieci",
       "price": "6.49",
       "src": "workinasmieci.jpg",
       "type": "master",
-      "category": "trashBag"
+      "category": "trashBag",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam dolorum hic similique. Ab id iste maiores optio repellat vel vero? Debitis esse neque quaerat quo ratione temporibus ut, veritatis?"
     },
     {
+      "id": 5,
       "name": "Ścierka z mikrofibry",
       "price": "2.30",
       "src": "scierkazmikrofibry.jpg",
       "type": "master",
-      "category": "wiper"
+      "category": "wiper",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam dolorum hic similique. Ab id iste maiores optio repellat vel vero? Debitis esse neque quaerat quo ratione temporibus ut, veritatis?"
     },
     {
+      "id": 6,
       "name": "Ścierki MORANA",
       "price": "10.20",
       "src": "scierkiMorana.jpg",
       "type": "morana",
-      "category": "wiper"
+      "category": "wiper",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam dolorum hic similique. Ab id iste maiores optio repellat vel vero? Debitis esse neque quaerat quo ratione temporibus ut, veritatis?"
     }
   ],
   "order": [

@@ -403,7 +403,8 @@ ul.listOfProducts {
   border-radius: 3rem;
   margin-bottom: 1rem; }
   .productElement:hover {
-    box-shadow: 0 0 5px #ed5b31; }
+    box-shadow: 0 0 5px #ed5b31;
+    text-decoration: none; }
   .productElement .productImage {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -662,10 +663,6 @@ a {
   align-items: center;
   flex-direction: column; }
 
-.row {
-  width: 100%;
-  min-height: 20rem; }
-
 .homeButton {
   height: 1rem;
   width: 1rem;
@@ -762,6 +759,12 @@ a {
     .blog .col-md .message {
       height: 70%;
       align-self: flex-end; }
+
+.row {
+  width: 100%;
+  min-height: 20rem;
+  margin-left: 0;
+  margin-right: 0; }
 
 button {
   background-color: inherit;

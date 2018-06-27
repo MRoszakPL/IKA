@@ -240,7 +240,10 @@ ul.listOfProducts{
   margin-bottom: 1rem;
   &:hover{
     box-shadow: 0 0 5px #ed5b31;
+    text-decoration: none;
   }
+
+
   .productImage{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -288,4 +291,6 @@ ul.listOfProducts{
       }
     }
   }
+
 }
+

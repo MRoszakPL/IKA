@@ -40,7 +40,6 @@ function translateMainCategory(value) {
 
 }
 
-
 class MainCategories extends Component{
 
     constructor(props) {

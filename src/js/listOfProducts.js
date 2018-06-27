@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {NavLink} from 'react-router-dom';
 
 class ProductElement extends Component{
 
@@ -40,21 +40,23 @@ class ProductElement extends Component{
     render() {
 
         return (
-            <li className={'row productElement'}>
-                <div className={'col-md-8 productImage'}>
-                    <img alt={this.props.product.name} src={'./images/'+this.props.product.src}/>
-                </div>
-                <div className={'col-md-4 productText'}>
-                    <h2>{this.props.product.name}</h2>
-                    <p>Cena {this.props.product.price}</p>
-
-                    <div>
-                        <button onClick={this.changeValue} name={'minus'} className={'operation'}>-</button>
-                        <input  type={'text'} value={this.state.count}/>
-                        <button  onClick={this.changeValue} name={'plus'} className={'operation'}>+</button>
+            <li className={'row '}>
+                <NavLink className={'row productElement'} to={'/product/'+this.props.product.id}>
+                    <div className={'col-md-8 productImage'}>
+                        <img alt={this.props.product.name} src={'./images/'+this.props.product.src}/>
                     </div>
-                    <button onClick={this.clickHandler}>Dodaj do koszyka</button>
-                </div>
+                    <div className={'col-md-4 productText'}>
+                        <h2>{this.props.product.name}</h2>
+                        <p>Cena {this.props.product.price}</p>
+
+                        <div>
+                            <button onClick={this.changeValue} name={'minus'} className={'operation'}>-</button>
+                            <input  type={'text'} value={this.state.count}/>
+                            <button  onClick={this.changeValue} name={'plus'} className={'operation'}>+</button>
+                        </div>
+                        <button onClick={this.clickHandler}>Dodaj do koszyka</button>
+                    </div>
+                </NavLink>
             </li>
         );
     }

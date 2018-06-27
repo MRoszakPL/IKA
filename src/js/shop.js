@@ -9,41 +9,47 @@ function downloadData(name) {
     return JSON.parse( localStorage.getItem(name));
 }
 
-
-const newProducts = [
+const Products = [
     {
-        name: 'Rękawice nitrylowe Aloes',
-        price: '3.30',
-        src: 'nitryloweAloes.jpg'
+        "id": 1,
+        "name": "Rękawice nitrylowe Aloes",
+        "price": "3.30",
+        "src": "nitryloweAloes.jpg",
     },
     {
-        name: 'Papier do pieczenia',
-        price: '4.09',
-        src: 'papierdopieczenia.jpg'
+        "id": 2,
+        "name": "Papier do pieczenia",
+        "price": "4.09",
+        "src": "papierdopieczenia.jpg",
     },
     {
-        name: 'Mop z mikrofibry',
-        price: '5.29',
-        src: 'mopzmikrofibry.jpg'
+        "id": 3,
+        "name": "Mop z mikrofibry",
+        "price": "5.29",
+        "src": "mopzmikrofibry.jpg",
     },
     {
-        name: 'Worki na śmieci',
-        price: '6.49',
-        src: 'workinasmieci.jpg'
+        "id": 4,
+        "name": "Worki na śmieci",
+        "price": "6.49",
+        "src": "workinasmieci.jpg",
     },
     {
-        name: 'Ścierka z mikrofibry',
-        price: '2.30',
-        src: 'scierkazmikrofibry.jpg'
+        "id": 5,
+        "name": "Ścierka z mikrofibry",
+        "price": "2.30",
+        "src": "scierkazmikrofibry.jpg",
+        "type": "master",
     },
     {
-        name: 'Ścierki MORANA',
-        price: '10.20',
-        src: 'scierkiMorana.jpg'
-    },
+        "id": 6,
+        "name": "Ścierki MORANA",
+        "price": "10.20",
+        "src": "scierkiMorana.jpg",
+    }
 ];
 
-class NewProducts extends Component {
+class NewProductsCarousel extends Component {
 
     render() {
 
@@ -96,7 +102,7 @@ class NewProduct extends Component{
 
         return (
             <div className={'carousel-item'+ this.props.hide}>
-                <NavLink to={'/shop/'+this.props.index}>
+                <NavLink to={'/product/'+this.props.item.id}>
                     <div>
                         <img src={'./images/'+this.props.item.src} alt={this.props.item.name}/>
                         <h5> {this.props.item.name}</h5>
@@ -179,7 +185,7 @@ class Shop extends Component{
                 <ShopMenu />
                 <div className={'container'}>
                     {this.state.searched && <h1>Wynik wyszukania dla: {this.state.searchValue} </h1> }
-                    {(this.state.isLoaded && this.state.searched) ? (this.state.products.length === 0) ? <h2>Brak wyników</h2> : <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> : <NewProducts items={newProducts}/>}
+                    {(this.state.isLoaded && this.state.searched) ? (this.state.products.length === 0) ? <h2>Brak wyników</h2> : <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> : <NewProductsCarousel items={Products}/>}
                 </div>
             </div>
         );

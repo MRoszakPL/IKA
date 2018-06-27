@@ -64,10 +64,7 @@ a {
   flex-direction: column;
 }
 
-.row{
-  width: 100%;
-  min-height: 20rem;
-}
+
 
 .homeButton{
   height: 1rem;
@@ -196,7 +193,12 @@ a {
 
 
 
-
+.row{
+  width: 100%;
+  min-height: 20rem;
+  margin-left: 0;
+  margin-right: 0;
+}
 button{
   background-color: inherit;
   border: none;
