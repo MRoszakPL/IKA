@@ -91,11 +91,13 @@ class Product extends Component{
 
 
     render() {
+
         return (
             <div>
                 <ShopMenu/>
                 <div className={'container'}>
                     {this.state.isLoaded && <ProductDescription count={this.state.value} product={this.state.item} />}
+                    <button onPress={() => this.props.history.goBack()} title="Go back from this HomeScreen" />
                 </div>
             </div>
         );

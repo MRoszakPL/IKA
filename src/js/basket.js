@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
 import PropTypes from 'prop-types'
+import {NavLink} from 'react-router-dom';
 
 //Send data with set name and conten//t
 function sendData(name, content) {
@@ -277,7 +278,7 @@ class List extends Component{
                     {list}
                     {(this.state.numbers === null || this.state.numbers.length === 0) ? null : <LastElement price={this.state.sum}/>}
                 </ul>
-                {(downloadData('logged')) ? (this.state.numbers === null || this.state.numbers.length === 0) ? <BackButton/> : <Buttons paymentFnc={this.payment}/> : <div> <h2>Zaloguj się</h2> <BackButton/></div>}
+                {(downloadData('logged')) ? (this.state.numbers === null || this.state.numbers.length === 0) ? <BackButton/> : <Buttons paymentFnc={this.payment}/> : <div className={'info'}> <NavLink to={'login'}><h2>Zaloguj się</h2></NavLink> <BackButton/></div>}
                 {this.redirect(this.state.pay)}
             </div>
         );

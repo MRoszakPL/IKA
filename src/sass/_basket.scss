@@ -115,6 +115,14 @@
       margin-bottom: 1rem;
     }
   }
+  .info{
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .empty{
     align-self: center;
   }

@@ -1,0 +1,44 @@
+.blog{
+
+
+}
+
+.row.mainNews {
+    background-image:  url("../images/blogmainpicture.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 30rem;
+  .container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    h1{
+      font-weight: bold;
+      color: white;
+    }
+    p{
+      color: black;
+    }
+  }
+}
+
+
+.blogPost{
+  margin-top: 1rem;
+}
+
+.listOfNews{
+  width: 100%;
+  .col-md-4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .col-md-8{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}

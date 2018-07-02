@@ -40,13 +40,13 @@ class ProductElement extends Component{
     render() {
 
         return (
-            <li className={'row '}>
-                <NavLink className={'row productElement'} to={'/product/'+this.props.product.id}>
+            <li className={'row productElement'}>
+
                     <div className={'col-md-8 productImage'}>
                         <img alt={this.props.product.name} src={'./images/'+this.props.product.src}/>
                     </div>
                     <div className={'col-md-4 productText'}>
-                        <h2>{this.props.product.name}</h2>
+                        <NavLink to={'/product/'+this.props.product.id}><h2>{this.props.product.name}</h2>   </NavLink>
                         <p>Cena {this.props.product.price}</p>
 
                         <div>
@@ -56,7 +56,7 @@ class ProductElement extends Component{
                         </div>
                         <button onClick={this.clickHandler}>Dodaj do koszyka</button>
                     </div>
-                </NavLink>
+
             </li>
         );
     }

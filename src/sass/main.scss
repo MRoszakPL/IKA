@@ -6,6 +6,7 @@
 @import './_myAccount.scss';
 @import './_basket.scss';
 @import './_myOrders.scss';
+@import './_blogPage.scss';
 
 body{
   background-color: #FCFAE8;
@@ -199,6 +200,7 @@ a {
   margin-left: 0;
   margin-right: 0;
 }
+
 button{
   background-color: inherit;
   border: none;
