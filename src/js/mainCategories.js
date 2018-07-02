@@ -64,25 +64,24 @@ class MainCategories extends Component{
         sum += Number(price)*Number(count);
         sum = Math.round(sum * 100) / 100;
 
-        if(nameOfProducts === null){
+        if(nameOfProducts === null || nameOfProducts === 0){
             nameOfProducts = [];
             nameOfProducts.push(name);
-        } else{
-            nameOfProducts.push(name);
-        }
-
-        if(prices === null){
-            prices = [];
-            prices.push(Math.round(price * 100) / 100);
-        } else{
-            prices.push(Math.round(price * 100) / 100);
-        }
-
-        if(numbers === null){
             numbers = [];
             numbers.push(count);
+            prices = [];
+            prices.push(Math.round(price * 100) / 100);
+
         } else{
-            numbers.push(count);
+            let index = nameOfProducts.indexOf(name);
+            if(index>=0){
+                numbers[index] += count;
+            } else {
+                nameOfProducts.push(name);
+                numbers.push(count);
+                prices.push(Math.round(price * 100) / 100);
+            }
+
         }
 
         sendData('numberOfProducts', numberOfProducts);
