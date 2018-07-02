@@ -638,11 +638,15 @@ ul.listOfProducts {
       color: black; }
 
 .blogPost {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ed5b31; }
 
 .listOfNews {
-  width: 100%; }
+  width: 100%;
+  margin-top: 1rem; }
   .listOfNews .col-md-4 {
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center; }
