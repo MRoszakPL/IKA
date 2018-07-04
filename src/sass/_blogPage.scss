@@ -24,7 +24,7 @@
 }
 
 
-.blogPost{
+.postIntroduction{
   margin-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ed5b31;
@@ -49,4 +49,23 @@
     justify-content: center;
 
   }
+}
+
+.blogPost{
+
+  .row{
+    min-height: 1px;
+    &.imageSection{
+      min-height: 30rem;
+    }
+  }
+
+
+  .container{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+  }
+
 }

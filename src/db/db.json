@@ -202,6 +202,24 @@
       "sum": 21.16,
       "pay": false,
       "id": 11
+    },
+    {
+      "name": [
+        "Rękawice nitrylowe Aloes",
+        "Mop z mikrofibry"
+      ],
+      "numberOfProducts": 16,
+      "numbers": [
+        8,
+        8
+      ],
+      "prices": [
+        3.3,
+        5.29
+      ],
+      "sum": 68.72,
+      "pay": false,
+      "id": 12
     }
   ]
 }

@@ -15,6 +15,38 @@ function downloadData(name) {
 
 class ProductDescription extends Component{
 
+    constructor(props) {
+        super(props);
+        this.state ={
+            count: 0,
+            price: this.props.product[0].price,
+            name: this.props.product[0].name
+        }
+    }
+
+
+    clickHandler = () =>{
+        this.props.clickFnc(this.state.name, this.state.price,  this.state.count);
+        this.setState ({
+            count: 0
+        })
+    }
+
+    changeValue = (e) => {
+        if(e.currentTarget.name === 'plus'){
+            this.setState({
+                count: this.state.count + 1
+            })
+        } else {
+            if(this.state.count>0){
+                this.setState({
+                    count: this.state.count - 1
+                })
+            }
+        }
+    }
+
+
 
     render() {
         console.log(this.props.product[0].src)
@@ -29,7 +61,7 @@ class ProductDescription extends Component{
 
                     <div>
                         <button onClick={this.changeValue} name={'minus'} className={'operation'}>-</button>
-                        <input  type={'text'} value={this.props.count}/>
+                        <input  type={'text'} value={this.state.count}/>
                         <button  onClick={this.changeValue} name={'plus'} className={'operation'}>+</button>
                     </div>
                     <button onClick={this.clickHandler}>Dodaj do koszyka</button>
@@ -131,15 +163,48 @@ class Product extends Component{
         });
     }
 
+    searchButtonHandler = (value) => {
+
+        fetch(`http://localhost:3002/products`,{
+            method: 'GET',
+        }).then( resp => {
+            if (resp.ok)
+                return resp.json();
+            else
+                throw new Error('Błąd sieci!');
+        }).then( resp => {
+            if(resp !== '[]'){
+                let result = [];
+                for(var item of resp){
+                    if(item.name.toUpperCase().includes(value.toUpperCase())) {
+                        result.push(item);
+                    }
+                }
+                this.setState({
+                    products: result,
+                    isLoaded: true,
+                    searched: true,
+                    searchValue: value
+                })
+            }
+
+        }).catch( err => {
+            console.log('Błąd!', err);
+        });
+
+    }
 
     render() {
 
         return (
             <div>
+                <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                 <ShopMenu/>
                 <div className={'container'}>
-                    {this.state.isLoaded && <ProductDescription count={this.state.value} product={this.state.item} />}
-                    <button onPress={() => this.props.history.goBack()} title="Go back from this HomeScreen" />
+                    <div className={'productContainer'} >
+                    {this.state.isLoaded && <ProductDescription count={this.state.value} clickFnc={this.clickHandler} product={this.state.item} />}
+                        <button className={'backButton'} onClick={() => this.props.history.goBack()}>Wróć do sklepu</button>
+                    </div>
                 </div>
             </div>
         );

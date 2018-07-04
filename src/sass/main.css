@@ -262,7 +262,8 @@ nav {
 
 .shopmenu {
   background: #cb60b3;
-  min-height: 5rem; }
+  min-height: 5rem;
+  margin-bottom: 1rem; }
   .shopmenu a {
     color: white; }
     .shopmenu a:hover {
@@ -444,6 +445,22 @@ ul.listOfProducts {
         outline: none; }
       .productElement .productText button.operation {
         width: 20%; }
+
+.container > .productContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .container > .productContainer h2, .container > .productContainer p {
+    margin-left: 2rem; }
+
+.backButton {
+  width: 80%;
+  height: 3rem;
+  border-radius: 1rem;
+  background-color: #ed5b31;
+  color: white;
+  margin-bottom: 2rem; }
 
 .myAccount.row {
   margin: 0 0;
@@ -637,7 +654,7 @@ ul.listOfProducts {
     .row.mainNews .container p {
       color: black; }
 
-.blogPost {
+.postIntroduction {
   margin-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ed5b31; }
@@ -655,6 +672,16 @@ ul.listOfProducts {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center; }
+
+.blogPost .row {
+  min-height: 1px; }
+  .blogPost .row.imageSection {
+    min-height: 30rem; }
+
+.blogPost .container {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; }
 
 body {
   background-color: #FCFAE8; }

@@ -31,7 +31,7 @@ class LeftImageNews extends Component{
 
 
             <NavLink to={'/blogPost'}>
-                <div className={'row blogPost'}>
+                <div className={'row postIntroduction'}>
                     <div className={'col-md-8'}>
                         <h1>Lorem ipsum dolor sit amet</h1>
                         <p>Data: 27.05.2018</p>
@@ -52,7 +52,7 @@ class RightImageNews extends Component{
     render() {
         return (
             <NavLink to={'/blogPost'}>
-                <div className={'row blogPost'}>
+                <div className={'row postIntroduction'}>
                     <div style={{backgroundImage: "url('./images/Info.png')", backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className={'col-md-4'}>
 
                     </div>
