@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ShopMenu from "./shopBar";
 import SearchBar from "./searchBar";
-
+import ListOfProducts from "./listOfProducts";
 
 //Send data with set name and content
 function sendData(name, content) {
@@ -85,7 +85,8 @@ class Product extends Component{
     constructor(props) {
         super(props);
         this.state = {
-
+            searched: false,
+            id: this.props.match.params.id,
             item: null,
             value: 0,
             isLoaded: false,
@@ -140,7 +141,7 @@ class Product extends Component{
     }
 
     componentDidMount() {
-        fetch('http://localhost:3002/products?id='+this.props.match.params.id,
+        fetch('http://localhost:3002/products?id='+this.state.id,
             {
                 method: 'GET'
             }).then( resp => {
@@ -194,6 +195,8 @@ class Product extends Component{
 
     }
 
+
+
     render() {
 
         return (
@@ -202,7 +205,9 @@ class Product extends Component{
                 <ShopMenu/>
                 <div className={'container'}>
                     <div className={'productContainer'} >
-                    {this.state.isLoaded && <ProductDescription count={this.state.value} clickFnc={this.clickHandler} product={this.state.item} />}
+                        {this.state.searched && <h1>Wynik wyszukania dla {this.state.searchValue}</h1>}
+                        { this.state.searched && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
+                        {!this.state.searched && this.state.isLoaded && <ProductDescription count={this.state.value} clickFnc={this.clickHandler} product={this.state.item} /> }
                         <button className={'backButton'} onClick={() => this.props.history.goBack()}>Wróć do sklepu</button>
                     </div>
                 </div>

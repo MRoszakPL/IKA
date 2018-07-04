@@ -450,7 +450,8 @@ ul.listOfProducts {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%; }
   .container > .productContainer h2, .container > .productContainer p {
     margin-left: 2rem; }
 

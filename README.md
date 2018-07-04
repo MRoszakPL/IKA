@@ -14,7 +14,7 @@ I decide that for final project I can show how his website can look like.
 
 - React.js
 - SASS + Bootstrap 
-
+ 
 
 ### Website look 
 
