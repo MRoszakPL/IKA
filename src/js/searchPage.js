@@ -22,12 +22,21 @@ class searchPage extends Component{
         this.state = {
             numOfProducts: (downloadData('numberOfProducts')>0) ? downloadData('numberOfProducts') : 'Pusto',
             sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
-
+            isLoaded: false,
+            products: []
         }
     }
 
+    componentDidMount() {
+        this.search(this.props.match.params.searchValue);
+    }
 
-    searchButtonHandler = (value) => {
+    search = (value) => {
+        console.log(value)
+        this.setState({
+            products: [],
+            isLoaded: false
+        })
 
         fetch(`http://localhost:3002/products`,{
             method: 'GET',
@@ -37,6 +46,7 @@ class searchPage extends Component{
             else
                 throw new Error('Błąd sieci!');
         }).then( resp => {
+            console.log(resp)
             if(resp !== '[]'){
                 let result = [];
                 for(var item of resp){
@@ -46,10 +56,14 @@ class searchPage extends Component{
                 }
                 this.setState({
                     products: result,
-                    isLoaded: true,
-                    searched: true,
-                    searchValue: value
+                    isLoaded: true
                 })
+            } else {
+                this.setState({
+                    products: [],
+                    isLoaded: true
+                })
+
             }
 
         }).catch( err => {
@@ -57,6 +71,55 @@ class searchPage extends Component{
         });
 
     }
+
+    searchButtonHandler = (value) => {
+        this.props.history.push(`/search/${value}`);
+        this.search(value)
+    };
+
+    clickHandler = (name, price, count) => {
+
+        let numberOfProducts = downloadData('numberOfProducts');
+        let nameOfProducts = downloadData('nameOfProducts');
+        let sum = downloadData('sum');
+        let prices = downloadData('prices');
+        let numbers = downloadData('numbers');
+
+        numberOfProducts +=Number(count);
+        sum += Number(price)*Number(count);
+        sum = Math.round(sum * 100) / 100;
+
+        if(nameOfProducts === null || nameOfProducts === 0){
+            nameOfProducts = [];
+            nameOfProducts.push(name);
+            numbers = [];
+            numbers.push(count);
+            prices = [];
+            prices.push(Math.round(price * 100) / 100);
+
+        } else{
+            let index = nameOfProducts.indexOf(name);
+            if(index>=0){
+                numbers[index] += count;
+            } else {
+                nameOfProducts.push(name);
+                numbers.push(count);
+                prices.push(Math.round(price * 100) / 100);
+            }
+
+        }
+
+        sendData('numberOfProducts', numberOfProducts);
+        sendData('nameOfProducts', nameOfProducts);
+        sendData('prices', prices);
+        sendData('sum', sum);
+        sendData('numbers', numbers);
+
+        this.setState({
+            numOfProducts: numberOfProducts,
+            sum: sum
+        })
+    };
 
     render() {
 
@@ -66,6 +129,7 @@ class searchPage extends Component{
                 <ShopMenu />
                 <div className={'container'}>
                    <h1>Wynik wyszukania dla: {this.props.match.params.searchValue} </h1>
+                    { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>
             </div>
         );
