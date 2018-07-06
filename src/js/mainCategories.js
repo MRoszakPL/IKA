@@ -129,7 +129,7 @@ class MainCategories extends Component{
                     <SearchBar clickFnc={this.searchButtonHandler}  numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                     <ShopMenu/>
                     <h1>
-                        {this.state.searched ? `Wynik wyszukania dla ${this.state.searchValue}` : translateMainCategory(this.props.match.params.mainTheme)}
+                        {translateMainCategory(this.props.match.params.mainTheme)}
                     </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>

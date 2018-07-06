@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {HashRouter,NavLink, withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import logo from '../images/logo.png';
 
@@ -12,14 +12,6 @@ const Button = withRouter(({ history }) => (
             onClick={() => { history.push('/basket') }}>
         Do koszyka
     </button>
-))
-
-const SearchInput = withRouter(({ history }) => (
-    <input className={'basketButton'}
-            type='button'
-            onClick={() => { history.push('/basket') }}>
-        Do koszyka
-    </input>
 ))
 
 class Basket extends Component{

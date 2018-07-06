@@ -3,7 +3,6 @@ import SearchBar from "./searchBar";
 import ShopMenu from "./shopBar";
 import ListOfProducts from "./listOfProducts"
 
-
 //Send data with set name and content
 function sendData(name, content) {
     localStorage.setItem(name, JSON.stringify( content ) );
@@ -39,7 +38,6 @@ function translateMainCategory(value) {
             return  'Profesjonalne sprzątanie';
     }
 }
-
 
 function translateSubCategory(value) {
 
@@ -82,7 +80,6 @@ function translateSubCategory(value) {
 
 }
 
-
 class SubCategory extends Component{
 
     constructor(props) {
@@ -94,12 +91,9 @@ class SubCategory extends Component{
             sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
             name : translateSubCategory(this.props.match.params.product),
             main: translateMainCategory(this.props.match.params.mainTheme),
-            searched: false,
-            searchValue: ''
         }
 
     }
-
 
     clickHandler = (name, price, count) => {
 
@@ -184,8 +178,7 @@ class SubCategory extends Component{
                     products: resp,
                     isLoaded: true,
                     name: name,
-                    main: main,
-                    searched: false
+                    main: main
                 })
             }
         }).catch( err => {
@@ -202,7 +195,7 @@ class SubCategory extends Component{
                 <SearchBar clickFnc={this.searchButtonHandler} numofproducts={downloadData('numberOfProducts')} sum={downloadData('sum')} />
                 <ShopMenu clickFnc={this.changeSiteHandler}/>
                 <h1>
-                    {this.state.searched ? `Wynik wyszukania dla ${this.state.searchValue}` : `${this.state.main} - ${this.state.name}`}
+                    {`${this.state.main} - ${this.state.name}`}
                 </h1>
                     { this.state.isLoaded && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
                 </div>

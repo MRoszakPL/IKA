@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
 import ShopMenu from './shopBar.js';
 import SearchBar from './searchBar.js';
 import ListOfProducts from "./listOfProducts";

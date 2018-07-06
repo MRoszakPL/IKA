@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import ShopMenu from './shopBar.js';
 import SearchBar from './searchBar.js';
-import ListOfProducts from "./listOfProducts"
 
 //Download data with set name
 function downloadData(name) {
@@ -123,9 +122,6 @@ class Shop extends Component{
             numOfProducts: (downloadData('numberOfProducts')>0) ? downloadData('numberOfProducts') : 'Pusto',
             sum: (downloadData('sum')) ? downloadData('sum') : '0.00',
             products: [],
-            isLoaded: false,
-            searched: false,
-            searchValue: ''
         }
     }
 
@@ -147,8 +143,7 @@ class Shop extends Component{
                 <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                 <ShopMenu />
                 <div className={'container'}>
-                    {this.state.searched && <h1>Wynik wyszukania dla: {this.state.searchValue} </h1> }
-                    {(this.state.isLoaded && this.state.searched) ? (this.state.products.length === 0) ? <h2>Brak wyników</h2> : <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> : <NewProductsCarousel items={Products}/>}
+                    <NewProductsCarousel items={Products}/>
                 </div>
             </div>
         );

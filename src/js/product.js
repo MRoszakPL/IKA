@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ShopMenu from "./shopBar";
 import SearchBar from "./searchBar";
-import ListOfProducts from "./listOfProducts";
 
 //Send data with set name and content
 function sendData(name, content) {
@@ -46,8 +45,6 @@ class ProductDescription extends Component{
         }
     }
 
-
-
     render() {
         console.log(this.props.product[0].src)
         return (
@@ -78,14 +75,12 @@ class ProductDescription extends Component{
 
 }
 
-
 class Product extends Component{
 
 
     constructor(props) {
         super(props);
         this.state = {
-            searched: false,
             id: this.props.match.params.id,
             item: null,
             value: 0,
@@ -163,27 +158,22 @@ class Product extends Component{
             console.log('Błąd!', err);
         });
     }
-
     searchButtonHandler = (value) => {this.props.history.push(`/search/${value}`)};
 
     render() {
-
         return (
             <div>
                 <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                 <ShopMenu/>
                 <div className={'container'}>
                     <div className={'productContainer'} >
-                        {this.state.searched && <h1>Wynik wyszukania dla {this.state.searchValue}</h1>}
-                        { this.state.searched && <ListOfProducts clickFnc={this.clickHandler} products={this.state.products} /> }
-                        {!this.state.searched && this.state.isLoaded && <ProductDescription count={this.state.value} clickFnc={this.clickHandler} product={this.state.item} /> }
+                        {this.state.isLoaded && <ProductDescription count={this.state.value} clickFnc={this.clickHandler} product={this.state.item} /> }
                         <button className={'backButton'} onClick={() => this.props.history.goBack()}>Wróć do sklepu</button>
                     </div>
                 </div>
             </div>
         );
     }
-
 };
 
 export default Product;
