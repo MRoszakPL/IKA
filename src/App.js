@@ -23,6 +23,7 @@ import SubCategory from "./js/subcategory";
 import MyOrders from "./js/myOrders";
 import MainCategories from "./js/mainCategories";
 import BlogPost from "./js/blogPost.js";
+import searchPage from "./js/searchPage";
 
 class App extends Component {
   render() {
@@ -44,6 +45,7 @@ class App extends Component {
                     <Route path='/product/:id' component={Product}/>
                     <Route path='/myOrders' component={MyOrders}/>
                     <Route path='/blogPost' component={BlogPost}/>
+                    <Route path='/search/:searchValue' component={searchPage}/>
                     <Route component={NoMatch}/>
                 </Switch>
                 <Footer/>

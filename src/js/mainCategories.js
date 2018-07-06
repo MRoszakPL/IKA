@@ -117,43 +117,16 @@ class MainCategories extends Component{
         });
     }
 
-    searchButtonHandler = (value) => {
 
-        fetch(`http://localhost:3002/products`,{
-            method: 'GET',
-        }).then( resp => {
-            if (resp.ok)
-                return resp.json();
-            else
-                throw new Error('Błąd sieci!');
-        }).then( resp => {
-            if(resp !== '[]'){
-                let result = [];
-                for(var item of resp){
-                    if(item.name.toUpperCase().includes(value.toUpperCase())) {
-                        result.push(item);
-                    }
-                }
-                this.setState({
-                    products: result,
-                    isLoaded: true,
-                    searched: true,
-                    searchValue: value
-                })
-            }
 
-        }).catch( err => {
-            console.log('Błąd!', err);
-        });
-
-    }
+    searchButtonHandler = (value) => {this.props.history.push(`/search/${value}`)};
 
     render() {
         console.log(this.state.numOfProducts)
         return  (
             <div className={'container shop'}>
                 <div className={'container'}>
-                    <SearchBar clickFnc={this.searchButtonHandler} numofproducts={this.state.numOfProducts} sum={this.state.sum} />
+                    <SearchBar clickFnc={this.searchButtonHandler}  numofproducts={this.state.numOfProducts} sum={this.state.sum} />
                     <ShopMenu/>
                     <h1>
                         {this.state.searched ? `Wynik wyszukania dla ${this.state.searchValue}` : translateMainCategory(this.props.match.params.mainTheme)}

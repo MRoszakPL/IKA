@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom';
+import {HashRouter,NavLink, withRouter} from 'react-router-dom';
 
 import logo from '../images/logo.png';
 
@@ -12,6 +12,14 @@ const Button = withRouter(({ history }) => (
             onClick={() => { history.push('/basket') }}>
         Do koszyka
     </button>
+))
+
+const SearchInput = withRouter(({ history }) => (
+    <input className={'basketButton'}
+            type='button'
+            onClick={() => { history.push('/basket') }}>
+        Do koszyka
+    </input>
 ))
 
 class Basket extends Component{
@@ -45,16 +53,18 @@ class SearchBar extends Component {
     }
 
 
-    clickHandler = (e) => {
 
-        this.props.clickFnc(this.state.searchValue);
-    }
 
     pressedKey = (e) => {
-        (e.charCode === 13) && this.props.clickFnc(this.state.searchValue);
+         (e.charCode === 13) && this.props.clickFnc(this.state.searchValue);
     }
 
+    clickHandler = () =>{
+        this.props.clickFnc(this.state.searchValue);
+    }
     render() {
+
+        console.log(this.props)
         return (
             <div className={'row'}>
                 <div className={'container searchbar'}>
