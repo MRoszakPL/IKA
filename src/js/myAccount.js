@@ -49,29 +49,31 @@ class Basket extends Component{
     render() {
 
         if(this.state.info !== null){
-            console.log(this.state.info[0].login);
 
         return (
-            <div className={'container row myAccount'}>
-                <div className={'col-md'}>
-                    <img src={'./images/user.png'} alt={'User'} />
+
+                <div className={'container  myAccount'}>
+                    <div className={'row'}>
+                    <div className={'col-md'}>
+                        <img src={'./images/user.png'} alt={'User'} />
+                    </div>
+                    <div className={'col-md'}>
+                        <h2>Dane użytkownika</h2>
+                        <ul>
+                            <li>Imię i nazwisko: {this.state.info[0].name} {this.state.info[0].surename}</li>
+                            <li>Login: {this.state.info[0].login}</li>
+                            <li>E-mail: {this.state.info[0].email}</li>
+                            <li>Typ użytkownika: {this.state.info[0].level ? 'Klient' : 'Administrator'}</li>
+                        </ul>
+                        <button onClick={this.nav}>Zamówienia</button>
+
+                        <button>Edytuj dane</button>
+                        <button>Zmień hasło</button>
+                    </div>
+
+                    </div>
                 </div>
-                <div className={'col-md'}>
-                    <h2>Dane użytkownika</h2>
-                    <ul>
-                        <li>Imię i nazwisko: {this.state.info[0].name} {this.state.info[0].surename}</li>
-                        <li>Login: {this.state.info[0].login}</li>
-                        <li>E-mail: {this.state.info[0].email}</li>
-                        <li>Typ użytkownika: {this.state.info[0].level ? 'Klient' : 'Administrator'}</li>
-                    </ul>
-                    <button onClick={this.nav}>Zamówienia</button>
 
-                    <button>Edytuj dane</button>
-                    <button>Zmień hasło</button>
-
-
-                </div>
-            </div>
         );
         } else {
             return null;

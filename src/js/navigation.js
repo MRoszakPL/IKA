@@ -54,7 +54,7 @@ class NavBar extends Component{
                             <NavLink className="nav-link" to="/myAccount">Moje konto</NavLink>
                         </li> : ''}
                         <li className="nav-item">
-                            {this.downloadData('logged') ? <NavLink className="nav-link" to="/unsing" onClick={this.unsign}>Wyloguj konto</NavLink>  : <NavLink className="nav-link" to="/login">Zaloguj się</NavLink>}
+                            {this.downloadData('logged') ? <div className="nav-link"  onClick={this.unsign}>Wyloguj konto</div>  : <NavLink className="nav-link" to="/login">Zaloguj się</NavLink>}
                         </li>
                         {this.state.navigate && <Redirect to="/" push={true} /> }
                     </ul>

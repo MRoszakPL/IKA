@@ -43,7 +43,6 @@ footer {
       align-self: center; }
 
 .contact {
-  padding-top: 2rem;
   flex-direction: column;
   align-self: center;
   align-items: center;
@@ -463,16 +462,17 @@ ul.listOfProducts {
   color: white;
   margin-bottom: 2rem; }
 
-.myAccount.row {
-  margin: 0 0;
-  align-self: center;
-  justify-self: center; }
+.myAccount .row {
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 50rem; }
 
 .myAccount .col-md {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 0 0; }
 
 .myAccount ul {
   min-height: 50%;
@@ -772,6 +772,9 @@ a {
     text-align: center; }
   .galleryElement:hover {
     animation: changingColor 1s linear forwards; }
+  .galleryElement:last-of-type {
+    padding-right: 3rem;
+    padding-left: 3rem; }
 
 .mainContent {
   min-height: 50rem;

@@ -38,17 +38,29 @@ const SliderElements = [
 class GalleryElement extends Component{
 
     render() {
+        if(!this.props.last){
             return(<NavLink  className={'galleryElement col-md-3'} to={'/shop/'+this.props.name}>
-               <img  src={`./images/${this.props.image}`} alt={this.props.name}/>
+                <img  src={`./images/${this.props.image}`} alt={this.props.name}/>
                 <p>{this.props.plName}</p>
-           </NavLink>);
+            </NavLink>);
+        } else {
+            return(<NavLink  className={'galleryElement col-md-10'} to={'/shop/'+this.props.name}>
+                <img  src={`./images/${this.props.image}`} alt={this.props.name}/>
+                <p>{this.props.plName}</p>
+            </NavLink>);
+        }
+
     };
 }
 
 class Gallery extends Component{
     render() {
         let list = SliderElements.map((element, index)=>{
-            return <GalleryElement key ={index} name={element.name} plName={element.plName} image={element.imageName}/>;
+            if(index!==SliderElements.length-1){
+                return  <GalleryElement key ={index} last={false} name={element.name} plName={element.plName} image={element.imageName}/>
+            } else {
+                return  <GalleryElement key ={index} last ={true} name={element.name} plName={element.plName} image={element.imageName}/>
+            }
         });
         return (
             <div className={'gallery'}>

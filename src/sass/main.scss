@@ -113,6 +113,11 @@ a {
     animation: changingColor 1s linear forwards;
   }
 
+  &:last-of-type{
+      padding-right: 3rem;
+    padding-left: 3rem;
+
+  }
 
 }
 
